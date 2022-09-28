@@ -1,20 +1,19 @@
-import { Routes, Route } from 'react-router-dom'
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Diner from './pages/Diner/Diner';
-import './app.css'
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import "./app.css";
+import MainPage from "./pages/Mainpage/MainPage";
 
 function App() {
   return (
-    <div className='container'>
+    <div className="container">
       <Header />
       <Routes>
-        <Route path='/' element={<Diner />} />
+        <Route path="/" element={<MainPage />} />
       </Routes>
       <Footer />
-
-  </div>
-  )
+    </div>
+  );
 }
 
 export default App;

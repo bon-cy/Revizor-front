@@ -4,6 +4,7 @@
 }
 
 .header {
+  background-color: white;
   width: 100%;
   height: 80px;
   border-bottom: 1px solid lightgray;
@@ -11,7 +12,11 @@
   flex-direction: row;
   padding: 0 170px;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
+
 
 .header_items {
   display: flex;

@@ -1,0 +1,38 @@
+.picture {
+  width: 100%;
+  height: 500px;
+  background-image: url(https://img.freepik.com/premium-photo/bottle-wine-cheeses-traditional-sausages-wooden-background-brie-cheese-blue-cheese-gorgonzola-fuete-salami-free-space-text-top-view_187166-53840.jpg?w=1800);
+  background-position: center;
+  position: relative;
+}
+
+.picture h1 {
+  color: rgb(223, 153, 23);
+  font-weight: 600;
+  text-align: center;
+  position: absolute;
+  top: 37%;
+  left: 35%;
+}
+
+.picture input {
+  padding: 15px;
+  font-size: 20px;
+  width: 60%;
+  position: absolute;
+  top: 247px;
+  left: 20%;
+  border-radius: 100px;
+  border: none;
+  box-shadow: 10px 5px 10px 10px rgba(5, 5, 5, 0.362);
+  outline-style: none;
+  padding-left: 70px;
+}
+
+.picture img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 51%;
+    left: 21%;
+}

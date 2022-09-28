@@ -1,6 +1,83 @@
+/*/////////////////=== =LOGO= = = = //////////////*/
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
 .header {
-   width: 100vw;
-   height: 10vh;
-   border-bottom: 1px solid black;
-   
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  padding: 0 170px;
+  justify-content: space-between;
+}
+
+.header_items {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  margin: auto 0;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 100px;
+  background-color: #34e0a1;
+  position: relative;
+  margin-right: 5px;
+}
+
+.logo img {
+  position: absolute;
+  top: 12px;
+  left: 2px;
+  margin: 0 auto;
+  width: 50px;
+  height: 32px;
+}
+
+.header p {
+  margin: auto 0;
+  margin-right: 30px;
+  font-size: 40px;
+  font-weight: normal;
+}
+
+/*/ ////////////////=== =SEARCH= = = = //////////////*/
+.header_items div {
+  margin: auto 0;
+  position: relative;
+}
+
+.header input {
+  width: 350px;
+  height: 45px;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 1000px;
+  border: 2px solid lightgray;
+}
+
+.lupa {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 10px;
+  top: 8px;
+}
+
+/*///////// = = =BUTTON == = =/////////////*/
+
+.auth_btn {
+  height: 45px;
+  margin: auto 0;
+  background-color: black;
+  color: white;
+  border-radius: 1000px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
 }

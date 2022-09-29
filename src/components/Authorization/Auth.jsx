@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
-import styles from '../Authorization/auth.module.css'
+import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import styles from "../Authorization/auth.module.css";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 
-const Auth = () => {
+const Auth = ({ setModal }) => {
+  const [toReg, setToReg] = useState(false);
 
-    const [modal, setModal] = useState(false)
+  return (
+    <div className={styles.auth_wrapper}>
 
-    return (
-        <div className={styles.auth_wrapper}>
-            <div className={auth_modal}>
-                <h3>Войдите в систему, <br/> чтобы открыть все возможности</h3>
-            </div>
-            
-        </div>
-    );
+      {toReg ? (
+        <SignUp setModal={setModal} setToReg={setToReg} />
+      ) : (
+        <SignIn setModal={setModal} setToReg={setToReg} />
+      )}
+    </div>
+  );
 };
 
 export default Auth;

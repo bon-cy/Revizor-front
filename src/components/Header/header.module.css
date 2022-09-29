@@ -10,7 +10,7 @@
   border-bottom: 1px solid lightgray;
   display: flex;
   flex-direction: row;
-  padding: 0 170px;
+  padding: 0 12%;
   justify-content: space-between;
 }
 
@@ -53,7 +53,7 @@
   position: relative;
 }
 
-.header input {
+.header_input {
   width: 350px;
   height: 45px;
   font-size: 18px;
@@ -82,4 +82,39 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.auth_btn:hover {
+  background-color: rgb(49, 49, 49);
+}
+
+/* ////////////= = = === REVIEW -= = = = == /////////////*/
+.review_and_btn {
+  display: flex;
+  align-content: center;
+}
+
+.review {
+  cursor: pointer;
+  border-radius: 1000px;
+  height: 35px;
+  display: flex;
+  margin: auto 50px;
+}
+
+.review:hover {
+  background-color: rgb(233, 230, 230);
+} 
+
+.review img {
+  width: 25px;
+  height: 25px;
+  margin: auto 3px;
+}
+
+.review p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: auto;
+  margin-right: 10px;
 }

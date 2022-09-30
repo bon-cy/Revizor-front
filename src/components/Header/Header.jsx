@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./header.module.css";
+import Auth from "../Authorization/Auth";
 
 const Header = () => {
+
+  const [modal, setModal] = useState(false)
+
+const handleAuth = () => {
+  setModal(true)
+}
+
   return (
-    <div className={styles.header}>
+    <>
+      {modal ? <Auth setModal={setModal} /> : null}
+      <div className={styles.header}>
       <div className={styles.header_items}>
         <div className={styles.logo}>
           <img src="logo.png" alt="" />
@@ -19,9 +29,11 @@ const Header = () => {
           <img src="pencil.png" alt="" />
           <p>Отзыв</p>
         </div>
-        <button className={styles.auth_btn}>Войти</button>
+        <button onClick={handleAuth} className={styles.auth_btn}>Войти</button>
       </div>
     </div>
+    </>
+  
   );
 };
 

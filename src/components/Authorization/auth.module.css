@@ -1,0 +1,164 @@
+.auth_wrapper {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(247, 243, 243, 0.7);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+}
+
+.auth_modal {
+  width: 500px;
+  background-color: rgb(58, 57, 57);
+  padding: 2% 4%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 70px;
+  box-shadow: 0px 5px 10px 2px rgba(1, 1, 1, 0.619);
+}
+
+.auth_modal h3 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.close_btn {
+  width: 20px;
+  margin-left: auto;
+  font-weight: 900;
+  color: #fff;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.login_input,
+.password_input,
+.email_input {
+  margin: 10px auto;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: none;
+  box-shadow: 0px 5px 10px 2px rgba(255, 255, 255, 0.255);
+}
+
+.name_input,
+.lastname_input {
+  margin: 10px auto;
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: none;
+  box-shadow: 0px 5px 10px 2px rgba(255, 255, 255, 0.255);
+}
+.two_inputs_parent {
+  display: flex;
+  flex-direction: row;
+}
+.two_inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.two_inputs label {
+  padding-left: 10px;
+}
+
+.singIn {
+  margin: 10px auto;
+  width: 45%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 1px solid white;
+  background: black;
+  color: white;
+  cursor: pointer;
+  margin-top: 30px;
+  box-shadow: 0px 5px 10px 2px rgba(185, 183, 183, 0.255);
+}
+.singIn:hover {
+  background: rgb(73, 73, 73);
+}
+
+.reg {
+  margin: 10px auto;
+  width: 60%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 1px solid white;
+  background: black;
+  color: white;
+  cursor: pointer;
+  margin-top: 30px;
+  box-shadow: 0px 5px 10px 2px rgba(185, 183, 183, 0.255);
+}
+
+.reg:hover {
+  background: rgb(73, 73, 73);
+}
+
+.auth_modal label {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.no_account {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.reg_link {
+  text-decoration: underline;
+  color: #fff;
+  cursor: pointer;
+}
+
+.back {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+.back p {
+  position: fixed;
+  margin-left: 30px;
+  color: rgb(58, 57, 57);
+}
+
+.back_btn {
+  border-radius: 1000px;
+  height: 30px;
+  width: 50px;
+  cursor: pointer;
+  margin-right: 30px;
+  border: none;
+  position: absolute;
+  left: 100px;
+}
+
+.back_btn p {
+  margin: 0;
+  position: absolute;
+  top: 6px;
+  left: 16px;
+}
+
+.back_btn:hover {
+  width: 240px;
+  transition: 0.5s;
+}

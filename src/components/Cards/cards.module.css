@@ -1,0 +1,15 @@
+.cards_container{
+    width: 100%;
+    display: flex;
+}
+.saidBar_container{
+    padding: 10px;
+    width: 30%;
+}
+.card_container{
+    padding: 10px;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

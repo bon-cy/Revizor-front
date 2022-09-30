@@ -10,6 +10,7 @@ const Card = ({diner}) => {
             <h3>{diner.name}</h3>
             <hr />
             <span>{diner.raiting}★★★★★</span>
+            {diner.position}
             <button>Подробнее</button>
         </div>
     );

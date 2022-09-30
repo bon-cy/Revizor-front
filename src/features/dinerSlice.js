@@ -1,7 +1,8 @@
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit")
 
 const initialState = {
-    diners: []
+    diners: [],
+    filterDiners: []
 }
 
 export const fetchDiners = createAsyncThunk(
@@ -20,12 +21,26 @@ export const fetchDiners = createAsyncThunk(
 const dinerSlice = createSlice({
     name: 'diner',
     initialState,
-    reducers: {},
+    reducers: {
+        type(state, action) {
+            state.filterDiners = state.diners.filter((diner) => {
+                return diner.type === action.payload
+            })
+        },
+        middlePrice(state, action){
+            state.filterDiners = state.filterDiners.filter((diner) => {
+                return diner.middlePrice >= action.payload
+            })
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchDiners.fulfilled, (state, action) => {
             state.diners = action.payload
+            state.filterDiners = action.payload
         })
     }
 })
 
 export default dinerSlice.reducer
+
+export const { type, middlePrice } = dinerSlice.actions

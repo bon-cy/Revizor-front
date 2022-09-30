@@ -1,24 +1,71 @@
-import React from 'react';
-import styles from './saidBar.module.css'
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { fetchDiners, middlePrice, type } from "../../features/dinerSlice";
+import styles from "./saidBar.module.css";
 
 const SaidBar = () => {
-    return (
-        <div className={styles.main}>
-            <div className={styles.filter_check}>
-                <span>Кафе</span><input type="checkbox" name="" id="" /> 
-            </div>
-            <div className={styles.filter_check}>
-                <span>Рестораны</span><input type="checkbox" name="" id="" /> 
-            </div>            
-            <div className={styles.filter_check}>
-                <span>Фастфуд</span><input type="checkbox" name="" id="" /> 
-            </div>
-            <hr />
-            <span>Цена:</span>
-            от<input type="text" />
-            до<input type="text" />
-        </div>
-    );
+  const dispatch = useDispatch();
+  const [price, setPrice] = useState(0);
+
+  return (
+    <div className={styles.main}>
+      <div className={styles.filter_check}>
+        <span>Кафе</span>
+        <input
+          type="radio"
+          name="type"
+          id=""
+          onChange={() => {
+            dispatch(type("Caffee"));
+          }}
+        />
+      </div>
+      <div className={styles.filter_check}>
+        <span>Рестораны</span>
+        <input
+          type="radio"
+          name="type"
+          id=""
+          onChange={() => {
+            dispatch(type("Restoran"));
+          }}
+        />
+      </div>
+      <div className={styles.filter_check}>
+        <span>Фастфуд</span>
+        <input
+          type="radio"
+          name="type"
+          id=""
+          onChange={() => {
+            dispatch(type("Fastfood"));
+          }}
+        />
+      </div>
+      <div className={styles.filter_check}>
+        <span>Все</span>
+        <input
+          type="radio"
+          name="type"
+          id=""
+          onChange={() => {
+            dispatch(fetchDiners());
+          }}
+        />
+      </div>
+      <hr />
+      <span>Цена:</span>
+      <input
+        type="text"
+        placeholder="Средняя цена не больше..."
+        value={price}
+        onChange={(e) => {
+          setPrice(e.target.value);
+          dispatch(middlePrice(e.target.value))
+        }}
+      />
+    </div>
+  );
 };
 
 export default SaidBar;

@@ -6,7 +6,7 @@ import SaidBar from '../SaidBar/SaidBar';
 import styles from './cards.module.css'
 
 const Cards = () => {
-    const diners = useSelector(state => state.diners.diners)
+    const diners = useSelector(state => state.diners.filterDiners)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchDiners())
@@ -18,7 +18,7 @@ const Cards = () => {
             </div>
             <div className={styles.card_container}>
                 {diners.map((diner, index) => {
-                    return <Card diner={diner} />
+                    return <Card key={index} diner={diner} />
                 })}
             </div>
 

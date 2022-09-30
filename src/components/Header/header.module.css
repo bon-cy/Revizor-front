@@ -123,6 +123,7 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  border: none;
 }
 
 .auth_btn:hover {

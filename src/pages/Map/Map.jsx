@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./diner.module.css";
+import styles from "./map.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-const Diner = () => {
+const Map = () => {
   const [markerWind, setMarkerWind] = useState(styles.markerWind);
 
   const handleMouseOver = () => {
@@ -35,7 +35,7 @@ const Diner = () => {
   };
 
   return (
-    <div className={styles.diner}>
+    <div className={styles.map}>
       <div className={styles.kart}>
         <div className={styles.markers}>
 
@@ -75,4 +75,4 @@ const Diner = () => {
   );
 };
 
-export default Diner;
+export default Map;

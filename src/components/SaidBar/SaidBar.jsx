@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchDiners, middlePrice, type } from "../../features/dinerSlice";
-import styles from "./saidBar.module.css";
+import style from "./saidBar.module.css";
 
-const SaidBar = () => {
+const SaidBar = ({price, setPrice}) => {
   const dispatch = useDispatch();
-  const [price, setPrice] = useState(0);
-
+    useEffect(()=> {
+        dispatch(fetchDiners())
+    }, [dispatch])
   return (
-    <div className={styles.main}>
-      <div className={styles.filter_check}>
+    <div className={style.main}>
+      <div className={style.filter_check}>
         <span>Кафе</span>
         <input
           type="radio"
@@ -20,7 +21,7 @@ const SaidBar = () => {
           }}
         />
       </div>
-      <div className={styles.filter_check}>
+      <div className={style.filter_check}>
         <span>Рестораны</span>
         <input
           type="radio"
@@ -31,7 +32,7 @@ const SaidBar = () => {
           }}
         />
       </div>
-      <div className={styles.filter_check}>
+      <div className={style.filter_check}>
         <span>Фастфуд</span>
         <input
           type="radio"
@@ -42,7 +43,7 @@ const SaidBar = () => {
           }}
         />
       </div>
-      <div className={styles.filter_check}>
+      <div className={style.filter_check}>
         <span>Все</span>
         <input
           type="radio"
@@ -61,7 +62,6 @@ const SaidBar = () => {
         value={price}
         onChange={(e) => {
           setPrice(e.target.value);
-          dispatch(middlePrice(e.target.value))
         }}
       />
     </div>

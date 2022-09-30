@@ -27,11 +27,6 @@ const dinerSlice = createSlice({
                 return diner.type === action.payload
             })
         },
-        middlePrice(state, action){
-            state.filterDiners = state.filterDiners.filter((diner) => {
-                return diner.middlePrice >= action.payload
-            })
-        }
     },
     extraReducers: (builder) => {
         builder.addCase(fetchDiners.fulfilled, (state, action) => {

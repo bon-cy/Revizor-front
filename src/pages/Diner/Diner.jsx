@@ -44,7 +44,7 @@ const Diner = () => {
             <img className={styles.markerWindImg}alt=""src="https://avatars.mds.yandex.net/get-altay/4612894/2a000001810c596481a575353a9acbdeec58/XXL"></img>
             <div className={styles.winContent}>
             <div className={styles.name}>DodoPizza</div>
-            <div className={styles.position}>ул.Назарбфева 84а</div>
+            <div className={styles.position}>ул.Назарбфева </div>
             </div>
             </div>
 

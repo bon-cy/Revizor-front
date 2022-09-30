@@ -136,7 +136,7 @@
 
 .back p {
   position: fixed;
-  margin-left: 30px;
+  margin-left: 40px;
   color: rgb(58, 57, 57);
 }
 
@@ -148,7 +148,7 @@
   margin-right: 30px;
   border: none;
   position: absolute;
-  left: 100px;
+  left: 70px;
 }
 
 .back_btn p {

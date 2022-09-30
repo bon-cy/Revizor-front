@@ -1,6 +1,206 @@
+/*/////////////////=== =LOGO= = = = //////////////*/
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
 .header {
-   width: 100vw;
-   height: 10vh;
-   border-bottom: 1px solid black;
-   
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 80px;
+
+  display: flex;
+  flex-direction: row;
+  padding: 0 12%;
+  justify-content: space-between;
+  -webkit-box-shadow: 0px -5px 20px -5px rgba(34, 60, 80, 0.78) inset;
+  -moz-box-shadow: 0px -5px 20px -5px rgba(34, 60, 80, 0.78) inset;
+  box-shadow: 0px -5px 20px -5px rgba(34, 60, 80, 0.78) inset;
+}
+
+.header_items {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1100px) {
+  .header_items p {
+    font-size: 20px !important;
+  }
+
+  .logo {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .logo img {
+    width: 35px !important;
+    height: 25px !important;
+    top: 9px !important;
+    left: 5px !important;
+  }
+
+  .header {
+    padding: 0 5%;
+  }
+
+  .header_input {
+    width: 320px !important;
+  }
+
+  .auth_btn {
+    font-size: 12px !important;
+    height: 35px !important;
+  }
+
+  .review p {
+    font-size: 14px !important;
+  }
+
+  .review {
+    margin: auto 20px !important;
+  }
+}
+
+.logo {
+  margin: auto 0;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 100px;
+  background-color: #34e0a1;
+  position: relative;
+  margin-right: 5px;
+}
+
+.logo img {
+  position: absolute;
+  top: 12px;
+  left: 2px;
+  margin: 0 auto;
+  width: 50px;
+  height: 32px;
+}
+
+.header p {
+  margin: auto 0;
+  margin-right: 30px;
+  font-size: 40px;
+  font-weight: normal;
+}
+
+/*/ ////////////////=== =SEARCH= = = = //////////////*/
+.header_items div {
+  margin: auto 0;
+  position: relative;
+}
+
+.header_input {
+  width: 350px;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 1000px;
+  border: 2px solid lightgray;
+  padding-left: 45px;
+}
+
+.lupa {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 10px;
+  top: 8px;
+}
+
+/*///////// = = =BUTTON == = =/////////////*/
+
+.auth_btn {
+  height: 45px;
+  margin: auto 0;
+  background-color: black;
+  color: white;
+  border-radius: 1000px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth_btn:hover {
+  background-color: rgb(49, 49, 49);
+}
+
+/* ////////////= = = === REVIEW -= = = = == /////////////*/
+.review_and_btn {
+  display: flex;
+  align-content: center;
+}
+
+.review {
+  cursor: pointer;
+  border-radius: 1000px;
+  height: 35px;
+  display: flex;
+  margin: auto 50px;
+}
+
+.review:hover {
+  background-color: rgb(233, 230, 230);
+}
+
+.review img {
+  width: 25px;
+  height: 25px;
+  margin: auto 3px;
+}
+
+.review p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: auto;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .header_items p {
+    font-size: 16px !important;
+  }
+
+  .logo {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .logo img {
+    width: 30px !important;
+    height: 20px !important;
+    top: 7px !important;
+    left: 2px !important;
+  }
+
+  .header {
+    padding: 0 5%;
+  }
+
+  .header_input {
+    width: 160px !important;
+    height: 35px;
+  }
+
+  .lupa {
+    top: 3px;
+    left: 4px;
+  }
+
+  .auth_btn {
+    font-size: 12px !important;
+    height: 35px !important;
+  }
+
+  .review p {
+    font-size: 14px !important;
+  }
+
+  .review {
+    margin: auto 20px !important;
+  }
 }

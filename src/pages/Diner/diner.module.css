@@ -1,5 +1,243 @@
+
 .diner {
-  width: 100%;
-  height: 300px;
-  background-color: gray;
+
+    width: 100vw;
+    height: 80vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+  }
+  .kart {
+    margin-top: 5%;
+    width: 980px;
+    height: 519px;
+    position: relative;
+  }
+  .markers {
+    display: flex;
+    position: absolute;
+    width: 980px;
+    height: 519px;
+    background-color: transparent;
+  }
+
+  .marker {
+    width: 5%;
+    height: 5%;
+    margin-top: 19%;
+    margin-left: 47.5%;
+    position: absolute;
+    color: red;
+    text-shadow: 1px 1px 2px black;
+    transition: 0.2s;
+  }
+  .marker:hover {
+    transform: scale(1.4);
+    transition: 0.2s;
+    width: 5%;
+    height: 5%;
+    margin-top: 19%;
+    margin-left: 47.5%;
+    color: red;
+    text-shadow: 1px 1px 2px black;
+  }
+  .markerWind {
+    visibility: hidden;
+    width: 10%;
+    height: 20%;
+    margin-top: 8%;
+    margin-left: 51%;
+ 
 }
+.markerWindSie {
+   visibility: visible;
+   width: 11%;
+   height: 25%;
+   margin-top: 7%;
+   margin-left: 52%;
+   background-color:white;
+   border: 1px solid rgb(164, 160, 160);
+   border-radius: 5%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   transition: 0.4s;
+}
+.markerWindImg {
+    width: 90%;
+    height: 65%;
+    margin-top: 5%;
+}
+
+.winContent {
+    width: 90%;
+    height: 35%;
+    font-size: 9px;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    margin-left: 5%;
+ 
+}
+.name {
+    margin-top: 10%;
+    
+}
+.position {
+    margin-top: 5%;
+}
+
+
+
+
+
+
+  .marker2 {
+    transition: 0.2s;
+    width: 5%;
+    height: 5%;
+    margin-top: 30%;
+    margin-left: 43%;
+    position: absolute;
+    color: red;
+  }
+  .marker2:hover {
+    transform: scale(1.4);
+    transition: 0.2s;
+    width: 5%;
+    height: 5%;
+    margin-top: 30%;
+    margin-left: 43%;
+    position: absolute;
+    color: red;
+  }
+
+
+
+.markerWind2 {
+  visibility: hidden;
+  width: 10%;
+  height: 20%;
+  margin-top: 19%;
+  margin-left: 46.5%;
+  position: absolute;
+
+}
+.markerWindSie2 {
+ visibility: visible;
+ width: 11%;
+ height: 25%;
+ margin-top: 18%;
+ margin-left: 47.5%;
+ background-color:white;
+ border: 1px solid rgb(164, 160, 160);
+ border-radius: 5%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ transition: 0.4s;
+ position: absolute;
+}
+.markerWindImg2 {
+  width: 90%;
+  height: 65%;
+  margin-top: 5%;
+}
+
+.winContent2 {
+  width: 90%;
+  height: 35%;
+  font-size: 9px;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  margin-left: 5%;
+
+}
+.name2 {
+  margin-top: 10%;
+  
+}
+.position2 {
+  margin-top: 5%;
+}
+
+
+
+
+  
+  .marker3 {
+    transition: 0.2s;
+    width: 5%;
+    height: 5%;
+    margin-top: 24%;
+    margin-left: 33%;
+    position: absolute;
+    color: red;
+  }
+  .marker3:hover {
+    transform: scale(1.4);
+    transition: 0.2s;
+    width: 5%;
+    height: 5%;
+    margin-top: 24%;
+    margin-left: 33%;
+    position: absolute;
+    color: red;
+  }
+
+
+.markerWind3 {
+    visibility: hidden;
+    width: 10%;
+    height: 20%;
+    margin-top: 13%;
+    margin-left: 36.5%;
+    position: absolute;
+  
+  }
+  .markerWindSie3{
+   visibility: visible;
+   width: 11%;
+   height: 25%;
+   margin-top: 12%;
+   margin-left: 37.5%;
+   background-color:white;
+   border: 1px solid rgb(164, 160, 160);
+   border-radius: 5%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   transition: 0.4s;
+   position: absolute;
+  }
+  .markerWindImg3 {
+    width: 90%;
+    height: 65%;
+    margin-top: 5%;
+  }
+  
+  .winContent3 {
+    width: 90%;
+    height: 35%;
+    font-size: 9px ;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    margin-left: 5%;
+  
+  }
+  .name3 {
+    margin-top: 10%;
+    
+  }
+  .position3 {
+    margin-top: 5%;
+  }
+
+
+
+  
+  
+ 
+

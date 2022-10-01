@@ -55,6 +55,7 @@ const SaidBar = ({price, setPrice}) => {
         />
       </div>
       <hr />
+      
       <span>Цена:</span>
       <input
         type="text"

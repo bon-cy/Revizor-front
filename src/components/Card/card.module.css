@@ -1,10 +1,13 @@
 .main{
+    margin-bottom: 25px;
     box-shadow: 0px 0px 10px 3px gray;
-    width: 33%;
-    height: 300px;
+    border-radius: 30px;
+    width: 30%;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 .mian h3{
     padding: 3px;
@@ -12,10 +15,15 @@
 }
 .main hr{    
     width: 90%;
+    background-color: #f2b203;
+    padding: 1px;
+    border-radius: 10px;
+    border: 0;
 }
 .card_image img{
-
+    height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 .card_image{
     overflow: hidden;
@@ -23,12 +31,19 @@
     height: 70%;
 }
 .main button{
-    margin-top: 5px;
+    transition: all 0.4s;
+    margin: 15px 0 15px 0;
     border: 0;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #f2b203;
     font-size: 18px;
     color: white;
     width: 50%;
-    height: 9%;
+    height: 10%;
+}
+.main button:hover{
+    background-color: black;
+}
+.raiting{
+    font-size: 25px;
 }

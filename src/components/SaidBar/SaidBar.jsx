@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchDiners, middlePrice, type } from "../../features/dinerSlice";
-import style from "./saidBar.module.css";
+import styles from "./saidBar.module.css";
 
 const SaidBar = ({price, setPrice}) => {
   const dispatch = useDispatch();
@@ -9,8 +9,8 @@ const SaidBar = ({price, setPrice}) => {
         dispatch(fetchDiners())
     }, [dispatch])
   return (
-    <div className={style.main}>
-      <div className={style.filter_check}>
+    <div className={styles.main}>
+      <div className={styles.filter_check}>
         <span>Кафе</span>
         <input
           type="radio"
@@ -21,7 +21,7 @@ const SaidBar = ({price, setPrice}) => {
           }}
         />
       </div>
-      <div className={style.filter_check}>
+      <div className={styles.filter_check}>
         <span>Рестораны</span>
         <input
           type="radio"
@@ -32,7 +32,7 @@ const SaidBar = ({price, setPrice}) => {
           }}
         />
       </div>
-      <div className={style.filter_check}>
+      <div className={styles.filter_check}>
         <span>Фастфуд</span>
         <input
           type="radio"
@@ -43,7 +43,7 @@ const SaidBar = ({price, setPrice}) => {
           }}
         />
       </div>
-      <div className={style.filter_check}>
+      <div className={styles.filter_check}>
         <span>Все</span>
         <input
           type="radio"
@@ -55,15 +55,18 @@ const SaidBar = ({price, setPrice}) => {
         />
       </div>
       <hr />
+      <div className={styles.price_container}>
       <span>Цена:</span>
       <input
-        type="text"
+      className={styles.price}
+        type="number"
         placeholder="Средняя цена не больше..."
         value={price}
         onChange={(e) => {
           setPrice(e.target.value);
         }}
       />
+      </div>
     </div>
   );
 };

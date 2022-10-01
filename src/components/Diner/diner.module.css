@@ -1,0 +1,16 @@
+.collage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 25%;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: minmax(100px, auto);
+    grid-gap: 5px;
+    overflow: hidden;
+}
+.collage_image{
+    padding: 5px;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}

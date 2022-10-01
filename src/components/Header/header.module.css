@@ -84,7 +84,8 @@
 .header p {
   margin: auto 0;
   margin-right: 30px;
-  font-size: 40px;
+  margin-left: 30px;
+  font-size: 30px;
   font-weight: normal;
 }
 

@@ -18,7 +18,7 @@ const handleAuth = () => {
         <div className={styles.logo}>
           <img src="logo.png" alt="" />
         </div>
-        <p>Nazvanie</p>
+        <p>Gogolь-Mogolь</p>
         <div>
           <input className={styles.header_input} type="text" />
           <img className={styles.lupa} src="lupa.png" alt="" />

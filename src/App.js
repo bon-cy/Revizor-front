@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import "./app.css";
 import MainPage from "./pages/Mainpage/MainPage";
+import Diner from "./components/Diner/Diner";
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/diner/:dinerId" element={<Diner />} />
       </Routes>
       <Footer />
     </div>

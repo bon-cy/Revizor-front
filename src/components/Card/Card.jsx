@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './card.module.css'
 
 const Card = ({diner}) => {
@@ -11,7 +12,7 @@ const Card = ({diner}) => {
             <hr />
             <span  className={styles.raiting}>{diner.raiting}★★★★★</span>
             {diner.address}
-            <button>Подробнее</button>
+            <button><Link style={{ textDecoration: 'none', color: 'white' }} to={`/diner/${diner._id}`}>Подробнее</Link></button>
         </div>
     );
 };

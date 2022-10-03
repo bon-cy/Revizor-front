@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { authSignUp } from "../../features/applicationSlice";
 import styles from "../Authorization/auth.module.css";
 
 const SignUp = ({ setModal, setToReg }) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   function sendNavigate() {
     navigate("/");
@@ -18,8 +21,6 @@ const SignUp = ({ setModal, setToReg }) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [mail, setMail] = useState("");
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
 
   const handleChangeLogin = (e) => {
     setLogin(e.target.value);
@@ -33,14 +34,6 @@ const SignUp = ({ setModal, setToReg }) => {
     setMail(e.target.value);
   };
 
-  const handleChangeLastName = (e) => {
-    setLastName(e.target.value);
-  };
-
-  const handleChangeName = (e) => {
-    setName(e.target.value);
-  };
-
   const handleReg = () => {
     if (!login || login.length < 3) {
       return alert("Логин должен содержать не меньше 3-х символов");
@@ -48,19 +41,11 @@ const SignUp = ({ setModal, setToReg }) => {
       return alert("Введите правильный эл. адрес");
     } else if (!password || password.length < 8) {
       return alert("Пароль должен содержать не меньше 8 символов");
-    } else if (!name) {
-      return alert("Поле имени не должно быть пустым");
-    } else if (!lastName) {
-      return alert("Поле фамилии не должно быть пустым");
     }
     setLogin("");
     setPassword("");
     setMail("");
-    setName("");
-    setLastName("");
-
-    setTimeout(sendNavigate, 2000);
-    setTimeout(sendSetModal, 1000);
+    dispatch(authSignUp({ login, password, mail }));
   };
 
   const handleBackToSignIn = () => {
@@ -83,28 +68,6 @@ const SignUp = ({ setModal, setToReg }) => {
         className={styles.login_input}
         type="text"
       />
-      <div className={styles.two_inputs_parent}>
-        <div className={styles.two_inputs}>
-          <label htmlFor="">Имя:</label>
-          <input
-            value={name}
-            onChange={(e) => handleChangeName(e)}
-            placeholder="Имя"
-            className={styles.name_input}
-            type="text"
-          />
-        </div>
-        <div className={styles.two_inputs}>
-          <label htmlFor="">Фамилия:</label>
-          <input
-            value={lastName}
-            onChange={(e) => handleChangeLastName(e)}
-            placeholder="Фамилия"
-            className={styles.lastname_input}
-            type="text"
-          />
-        </div>
-      </div>
 
       <label htmlFor="">Адрес эл. почты:</label>
       <input

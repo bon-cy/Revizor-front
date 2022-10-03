@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { authSignIn } from "../../features/applicationSlice";
 import styles from "../Authorization/auth.module.css";
 
 const SignIn = ({ setModal, setToReg }) => {
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
   function sendNavigate() {
     navigate("/");
@@ -14,7 +18,7 @@ const SignIn = ({ setModal, setToReg }) => {
   const handleCloseAuth = () => {
     setModal(false);
   };
-  
+
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [mail, setMail] = useState("");
@@ -34,7 +38,7 @@ const SignIn = ({ setModal, setToReg }) => {
     setToReg(true);
   };
 
-  const handleSignIn = () => {
+  const handleSignIn = (e) => {
     if (!login || login.length < 3) {
       return alert("Логин должен содержать не меньше 3-х символов");
     } else if (!mail || mail.length < 5 || !mail.includes("@")) {
@@ -46,8 +50,8 @@ const SignIn = ({ setModal, setToReg }) => {
     setPassword("");
     setMail("");
 
-    setTimeout(sendNavigate, 500);
-    setTimeout(sendSetModal, 0);
+    e.preventDefault();
+    dispatch(authSignIn({ login, password,mail }));
   };
 
   return (

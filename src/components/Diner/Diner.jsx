@@ -22,8 +22,7 @@ const Diner = () => {
   return (
     <>
       <div className={styles.diner_head}>
-        1
-        <DinerHead />
+        <DinerHead diner={diner} />
       </div>
       <div className={styles.diner_main}>
         2

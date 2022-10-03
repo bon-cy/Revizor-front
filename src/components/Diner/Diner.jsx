@@ -33,6 +33,8 @@ const Diner = () => {
       <div className={styles.diner_review}>
         3
         <Review />
+
+        
       </div>
     </>
   );

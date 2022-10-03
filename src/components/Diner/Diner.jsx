@@ -16,25 +16,13 @@ const Diner = () => {
 
     return dinerId === elem._id;
   });
-  console.log(diner[0]);
   return (
-    <div>
-      {diner.map((elem) => {
-        return (
-          <div className={styles.collage}>
-            {elem.photo.map((image, index) => {
-              return (
-                <img
-                className={styles.collage_image}
-                  src={`http://localhost:4000/public/photo/${image}`}
-                  alt=""
-                />
-              );
-            })}
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <div className={styles.diner_head}>1</div>
+      <div className={styles.diner_main}>2</div>
+
+      <div className={styles.diner_review}>3</div>
+    </>
   );
 };
 

@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.info1 {
+    color: red;
+    border: 1px solid red;
+}
+
+.info2 {
+    color: blue;
+    border: 1px solid blue;
+}
+
+.info3 {
+    color: palegreen;
+    border: 1px solid palegreen;
+}
+
+h3 {
+    text-align: center;
+}

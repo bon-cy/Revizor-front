@@ -7,10 +7,17 @@
     align-items: center;
 }
 .like_review{
+    font-size: 30px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 33%;
+}
+.like{
+    cursor: pointer;
+}
+.feather{
+    cursor: pointer;
 }
 .diner_name{
     width: 33%;
@@ -22,27 +29,16 @@
     font-family: "Montserrat", sans-serif;
 }
 .links{
+    font-size: 30px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 33%;
 }
-
-.like{
-    font-size: 40px;    
-}
 .instagram{
-    font-size: 40px;
+    cursor: pointer;
 }
-.feather{
-    font-size: 40px;
+.links span{
+    font-size: 18px;
 }
-.like:active{
-    color: red;
-}
-.instagram:active{
-    color: red;
-}
-.feather:active{
-    color: white;
-}
+

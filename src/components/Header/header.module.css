@@ -135,7 +135,14 @@
 .review_and_btn {
   display: flex;
   align-content: center;
+  justify-content: center;
+  margin: auto;
 }
+.profil{
+  cursor: pointer;
+  font-size: 30px;
+}
+
 
 .review {
   cursor: pointer;

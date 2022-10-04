@@ -1,38 +1,31 @@
-// import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-// const initialState = {
-//   users: [],
-// };
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
-// export const fetchUsers = createAsyncThunk(
-//   "users/fetch",
-//   async (_, thunkAPI) => {
-//     try {
-//       const res = await fetch("http://localhost:4000/users", {
-//         headers: {
-//           Authorization: `Bearer ${thunkAPI.getState().application.token}`,
-//         },
-//       });
-//       const users = await res.json();
+const initialState = {
+    users: []
+}
 
-//       if (users.error) {
-//         return thunkAPI.rejectWithValue(users.error);
-//       }
-//       return users;
-//     } catch (e) {
-//         thunkAPI.rejectWithValue(e);
-//     }
-//   },
-// );
+export const fetchUsers = createAsyncThunk(
+    'get/users',
+    async (_, thunkAPI) => {
+        try {
+            const res = await fetch('http://localhost:4000/users')
+            const users = res.json()
+            return users
+        } catch (e) {
+            thunkAPI.rejectWithValue(e)
+        }
+    }
+    )
 
-// const usersSlice = createSlice({
-//     name: 'users',
-//     initialState,
-//     reducers: {},
-// extraReducers: (builder) => {
-//     builder.assCase(fetchUsers.fulfilled, (state, action) => {
-//         state.users = action.payload;
-//     });
-// },
-// })
+const userSlice = createSlice({
+    name: 'users',
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {
+        builder.addCase(fetchUsers.fulfilled, (state, action) => {
+            state.users = action.payload
+        })
+    }
+})
 
-// export default usersSlice.reducer
+export default userSlice.reducer

@@ -9,6 +9,7 @@ const MainPage = () => {
     return (
         <div>
             <Picture/>
+            сюда добавть новый компонент
             <Map/>
             <Cards />
             

@@ -3,14 +3,16 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
 import styles from "./dinerHead.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchDiners } from "../../features/dinerSlice";
 
 const DinerHead = ({ diner }) => {
     const dispatch = useDispatch()
+    const user = useSelector(state => state.application.token)
+    console.log(user);
     useEffect(() => {
         dispatch(fetchDiners())
-    })
+    }, [dispatch])
   return (
     <div className={styles.head_container}>
       <div className={styles.like_review}>

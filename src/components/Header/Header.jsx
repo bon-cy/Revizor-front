@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import styles from "./header.module.css";
 import Auth from "../Authorization/Auth";
+import { useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+
+  const id = useSelector(state => state.application.id)
 
   const [modal, setModal] = useState(false)
 
@@ -29,7 +35,7 @@ const handleAuth = () => {
           <img src="pencil.png" alt="" />
           <p>Отзыв</p>
         </div>
-        <button onClick={handleAuth} className={styles.auth_btn}>Войти</button>
+        {id ? <Link to={`/personal/${id}`}><FontAwesomeIcon icon={faUserSecret} className={styles.profil} /></Link> : <button onClick={handleAuth} className={styles.auth_btn}>Войти</button>}
       </div>
     </div>
     </>

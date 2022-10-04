@@ -139,6 +139,8 @@
   margin: auto;
 }
 .profil{
+  text-decoration: none;
+  color: black;
   cursor: pointer;
   font-size: 30px;
 }

@@ -35,7 +35,7 @@ const handleAuth = () => {
           <img src="pencil.png" alt="" />
           <p>Отзыв</p>
         </div>
-        {id ? <Link to={`/personal/${id}`}><FontAwesomeIcon icon={faUserSecret} className={styles.profil} /></Link> : <button onClick={handleAuth} className={styles.auth_btn}>Войти</button>}
+        {id ? <Link to={`/personal/${id}`} className={styles.profil}><FontAwesomeIcon icon={faUserSecret} /></Link> : <button onClick={handleAuth} className={styles.auth_btn}>Войти</button>}
       </div>
     </div>
     </>

@@ -14,16 +14,35 @@ export const fetchUsers = createAsyncThunk("get/users", async (_, thunkAPI) => {
   }
 });
 export const addAvatar = createAsyncThunk(
-  "put/users",
+  "post/avatar",
   async ({ file, id }, thunkAPI) => {
     try {
       const formData = new FormData();
       formData.append("file", file);
       const res = await fetch(`http://localhost:4000/user/${id}`, {
         method: "POST",
-        body: formData
+        body: formData,
       });
       const user = res.json();
+      return user;
+    } catch (e) {
+      thunkAPI.rejectWithValue(e);
+    }
+  }
+);
+export const addLike = createAsyncThunk(
+  "post/like",
+  async ({ dinerId, userId }, thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:4000/like", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ dinerId, userId }),
+      });
+      const user = await res.json();
+      console.log(user);
       return user;
     } catch (e) {
       thunkAPI.rejectWithValue(e);
@@ -36,17 +55,20 @@ const userSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchUsers.fulfilled, (state, action) => {
-      state.users = action.payload;
-    })
-    .addCase(addAvatar.fulfilled, (state, action) => {
-        state.users = state.users.map(elem => {
-            if( elem._id === action.payload._id ){
-                elem.avatar = action.payload.avatar
-            }
-            return elem
-        })
-    })
+    builder
+      .addCase(fetchUsers.fulfilled, (state, action) => {
+        state.users = action.payload;
+      })
+      .addCase(addAvatar.fulfilled, (state, action) => {
+        state.users = state.users.map((user) => {
+          console.log(user, action.payload);
+          if (user._id === action.payload._id) {
+            console.log(user.avatar, action.payload.avatar);
+            user.avatar = action.payload.avatar;
+          }
+          return user;
+        });
+      })
   },
 });
 

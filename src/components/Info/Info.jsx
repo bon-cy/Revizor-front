@@ -21,8 +21,10 @@ const Info = () => {
         </div>
 
         <div className={styles.info3}>
-          <h3>Лучшие рестораны</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          <h3>Выбирай, то что ты любишь</h3>
+          <p>Упрощенный поиск по твоим вкусам.
+            Рыба?мясо? мы найдем, то что Вам нужно
+          </p>
         </div>
       </div>
     </div>

@@ -38,6 +38,7 @@ const PersonalArea = () => {
       {users.map((user, index) => {
         if (user._id === id) {
           return (
+
             <div className={styles.main}>
               <div key={index} className={styles.profile_container}>
                 <div className={styles.avatar_container}>
@@ -73,6 +74,7 @@ const PersonalArea = () => {
                     </>
                   )}
                 </div>
+
 
                 <div className={styles.user_informatins}>
                   <span className={styles.login}>{user.login}</span>

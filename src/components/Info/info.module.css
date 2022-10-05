@@ -1,23 +1,33 @@
 .container {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
+  padding: 0 7%;
 }
 
 .info1 {
-    color: red;
-    border: 1px solid red;
+  border: 1px solid rgba(0, 0, 0, 0.244);
+  padding: 20px;
+  width: 32%;
+  text-align: center;
 }
 
 .info2 {
-    color: blue;
-    border: 1px solid blue;
+  border: 1px solid rgba(0, 0, 0, 0.244);
+  width: 32%;
+  padding: 20px;
+  text-align: center;
 }
 
 .info3 {
-    color: palegreen;
-    border: 1px solid palegreen;
+  border: 1px solid rgba(0, 0, 0, 0.244);
+  width: 32%;
+  padding: 20px;
+  text-align: center;
 }
 
 h3 {
-    text-align: center;
+  text-align: center;
+  color: rgb(223, 153, 23);
+  margin-bottom: 10px;
 }

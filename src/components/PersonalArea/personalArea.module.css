@@ -1,3 +1,9 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
 .profile_container{
     border-radius: 10px;
     border: 2px solid gray;
@@ -65,4 +71,11 @@
 }
 .mail{
     font-size: 30px;
+}
+.card{
+    width: 75%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }

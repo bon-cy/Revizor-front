@@ -16,6 +16,9 @@
 .like{
     cursor: pointer;
 }
+.like_active{
+    color: red;
+}
 .feather{
     cursor: pointer;
 }

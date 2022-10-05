@@ -23,8 +23,8 @@ export const addAvatar = createAsyncThunk(
         method: "POST",
         body: formData,
       });
-      const user = res.json();
-      return user;
+      const user = await res.json();
+      return {file, id};
     } catch (e) {
       thunkAPI.rejectWithValue(e);
     }
@@ -42,7 +42,6 @@ export const addLike = createAsyncThunk(
         body: JSON.stringify({ dinerId, userId }),
       });
       const user = await res.json();
-      console.log(user);
       return user;
     } catch (e) {
       thunkAPI.rejectWithValue(e);
@@ -61,10 +60,8 @@ const userSlice = createSlice({
       })
       .addCase(addAvatar.fulfilled, (state, action) => {
         state.users = state.users.map((user) => {
-          console.log(user, action.payload);
-          if (user._id === action.payload._id) {
-            console.log(user.avatar, action.payload.avatar);
-            user.avatar = action.payload.avatar;
+          if (user._id === action.payload.id) {
+            user.avatar = action.payload.file.name;
           }
           return user;
         });

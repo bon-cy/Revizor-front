@@ -27,7 +27,6 @@ const PersonalArea = () => {
   }
   function onDropHandler(e) {
     e.preventDefault(e);
-    console.log(0, '0');
     let file = e.dataTransfer.files[0];
     dispatch(addAvatar({ file, id }));
     setDrag(false);
@@ -82,9 +81,9 @@ const PersonalArea = () => {
                 </div>
               </div>
               <div className={styles.card}>
-                {/* {user.like.map(card => {
-                  return <Card key={index} diner={card} />
-                })} */}
+                {user.like.map(card => {
+                  return <Card diner={card} />
+                })}
               </div>
             </div>
           );

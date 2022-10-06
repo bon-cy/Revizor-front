@@ -42,7 +42,7 @@ const Chat = ({ socket, username, room }) => {
                 className="message"
                 id={username === messageContent.author ? "you" : "other"}
               >
-                <div>
+                <div className="mess-wrap">
                   <div className="message-content">
                     <p>{messageContent.message}</p>
                   </div>

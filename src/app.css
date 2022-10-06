@@ -13,7 +13,6 @@
   border: 1px solid black;
   width: 40%;
   border-radius: 5px;
-  overflow: hidden;
 }
 
 .chat-header {
@@ -29,7 +28,7 @@
 }
 
 .chat-body {
-  min-height: 200px;
+  height: 200px;
 }
 
 .chat-footer {
@@ -91,4 +90,15 @@
 #author {
   margin-left: 5px;
   font-weight: 600;
+}
+
+.chat-window .chat-body .message-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.chat-window .chat-body .message-container::-webkit-scrollbar {
+  display: none;
 }

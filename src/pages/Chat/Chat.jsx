@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import ScrollToBottom from "react-scroll-to-bottom";
 
 const Chat = ({ socket, username, room }) => {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
-
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
@@ -18,13 +18,14 @@ const Chat = ({ socket, username, room }) => {
       };
 
       await socket.emit("send_message", messageData);
-      setMessageList((list) => [...list, messageData])
+      setMessageList((list) => [...list, messageData]);
+      setCurrentMessage("");
     }
   };
 
   useEffect(() => {
     socket.on("receive_message", (data) => {
-setMessageList((list) => [...list, data])
+      setMessageList((list) => [...list, data]);
     });
   }, [socket]);
 
@@ -34,26 +35,36 @@ setMessageList((list) => [...list, data])
         <p>Live Chat</p>
       </div>
       <div className="chat-body">
-        {messageList.map((messageContent) => {
-            return <div className="message" id={username === messageContent.author ? 'you' : 'other'}>
+        <ScrollToBottom className="message-container">
+          {messageList.map((messageContent) => {
+            return (
+              <div
+                className="message"
+                id={username === messageContent.author ? "you" : "other"}
+              >
                 <div>
-                    <div className="message-content">
-                        <p>{messageContent.message}</p>
-                    </div>
-                    <div className="message-meta">
-                        <p id="time">{messageContent.time}</p>
-                        <p id="author">{messageContent.author}</p>
-
-                    </div>
+                  <div className="message-content">
+                    <p>{messageContent.message}</p>
+                  </div>
+                  <div className="message-meta">
+                    <p id="time">{messageContent.time}</p>
+                    <p id="author">{messageContent.author}</p>
+                  </div>
                 </div>
-            </div>
-        })}
+              </div>
+            );
+          })}
+        </ScrollToBottom>
       </div>
       <div className="chat-footer">
         <input
           type="text"
+          value={currentMessage}
           placeholder="hey..."
           onChange={(e) => setCurrentMessage(e.target.value)}
+          onKeyPress={(e) => {
+            e.key === "Enter" && sendMessage();
+          }}
         />
         <button onClick={sendMessage}>&#9658;</button>
       </div>

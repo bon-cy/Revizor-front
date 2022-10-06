@@ -6,3 +6,89 @@
 .container {
   width: 100%;
 }
+
+.chat-window {
+  margin: 10px auto;
+  min-height: 200px;
+  border: 1px solid black;
+  width: 40%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.chat-header {
+  background-color: black;
+  padding: 5px;
+}
+
+.chat-header p {
+  margin: 0;
+  color: wheat;
+  text-align: center;
+  font-weight: 600;
+}
+
+.chat-body {
+  min-height: 200px;
+}
+
+.chat-footer {
+  width: 100%;
+}
+
+.chat-footer input {
+  width: 90%;
+  padding: 5px;
+}
+
+.chat-footer button {
+  padding: 5px;
+
+  width: 10%;
+}
+
+.message {
+  display: flex;
+  margin: 5px;
+}
+
+#you {
+  justify-content: flex-start;
+}
+
+#you .message-content {
+  justify-content: flex-start;
+  background-color: rgb(15, 199, 15);
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+#you .message-meta {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5px;
+}
+
+#other {
+  justify-content: flex-end;
+}
+
+#other .message-content {
+  justify-content: flex-end;
+  background-color: blueviolet;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+#other .message-meta {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+
+#author {
+  margin-left: 5px;
+  font-weight: 600;
+}

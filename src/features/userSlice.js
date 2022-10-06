@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  users: [],
-  like: []
+  users: []
 };
 
 export const fetchUsers = createAsyncThunk("get/users", async (_, thunkAPI) => {
@@ -42,8 +41,26 @@ export const addLike = createAsyncThunk(
         },
         body: JSON.stringify({ dinerId, userId }),
       });
-      const user = await res.json();
-      return user;
+      const diner = await res.json();
+      return {diner, userId};
+    } catch (e) {
+      thunkAPI.rejectWithValue(e);
+    }
+  }
+);
+export const addDislike = createAsyncThunk(
+  "post/dislike",
+  async ({ dinerId, userId }, thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:4000/dislike", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ dinerId, userId }),
+      });
+      const diner = await res.json();
+      return {diner, userId};
     } catch (e) {
       thunkAPI.rejectWithValue(e);
     }
@@ -68,7 +85,24 @@ const userSlice = createSlice({
           return user;
         });
       })
-      // .addCase()
+      .addCase(addLike.fulfilled, (state, action) => {
+        state.users.map(user => {
+          if(user._id === action.payload.userId){
+            user.like.push(action.payload.diner)
+          }
+          return user
+        })
+      })
+      .addCase(addDislike.fulfilled, (state, action) => {
+        state.users.map(user => {
+          if(user._id === action.payload.userId){
+            user.like.filter(likes => {
+              return likes === action.payload.diner._id
+            })
+          }
+          return user
+        })
+      })
   },
 });
 

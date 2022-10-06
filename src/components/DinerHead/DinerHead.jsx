@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import styles from "./dinerHead.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDiners } from "../../features/dinerSlice";
-import { addLike, fetchUsers } from "../../features/userSlice";
+import { addDislike, addLike, fetchUsers } from "../../features/userSlice";
 import { useParams } from "react-router-dom";
 
 const DinerHead = ({ diner }) => {
@@ -29,12 +29,16 @@ const DinerHead = ({ diner }) => {
   function handleLike() {
     dispatch(addLike({ dinerId, userId }));
   }
+  function handleDislike() {
+    dispatch(addDislike({ dinerId, userId }));
+  }
+  console.log(user.filter(like => {return like !== dinerId}));
   return (
     <div className={styles.head_container}>
       <div className={styles.like_review}>
         <FontAwesomeIcon
           className={user.find( diner => diner._id === dinerId) ? styles.like_active : styles.like}
-          onClick={() => handleLike()}
+          onClick={user.find( diner => diner._id === dinerId) ? () => handleDislike() : () => handleLike()}
           icon={faHeart}
         />
         <FontAwesomeIcon className={styles.feather} icon={faFeather} />

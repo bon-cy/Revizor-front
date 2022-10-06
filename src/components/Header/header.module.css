@@ -138,7 +138,7 @@
   justify-content: center;
   margin: auto;
 }
-.profil{
+.profil {
   padding: 5px;
   border-radius: 10px;
   text-decoration: none;
@@ -147,13 +147,12 @@
   font-size: 30px;
   transition: all 0.3s;
 }
-.profil:hover{
+.profil:hover {
   box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
-.profil:active{
+.profil:active {
   box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
-
 
 .review {
   cursor: pointer;
@@ -226,4 +225,30 @@
   .review {
     margin: auto 20px !important;
   }
+}
+
+.chat_link {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  border-radius: 1000px;
+  display: flex;
+  padding: 5px 10px;
+  height: 35px;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.chat_link:hover {
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.chat_link:active {
+  box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.site_name {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
 }

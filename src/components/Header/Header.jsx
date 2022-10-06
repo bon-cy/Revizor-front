@@ -24,13 +24,14 @@ const handleAuth = () => {
         <div className={styles.logo}>
           <img src="logo.png" alt="" />
         </div>
-        <p>Gogolь-Mogolь</p>
+        <p><Link to="/" className={styles.site_name} >GogoLь-MogoLь</Link></p>
         <div>
           <input className={styles.header_input} type="text" />
           <img className={styles.lupa} src="lupa.png" alt="" />
         </div>
       </div>
       <div className={styles.review_and_btn}>
+        <p ><Link to="/chat" className={styles.chat_link} >Чат</Link></p>
         <div className={styles.review}>
           <img src="pencil.png" alt="" />
           <p>Отзыв</p>

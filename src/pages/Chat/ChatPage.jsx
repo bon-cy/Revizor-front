@@ -20,22 +20,22 @@ const ChatPage = () => {
     <div>
       {!showChat ? (
         <div className="joinChatContainer">
-          <h3>Join Chat</h3>
+          <h3>Войти в чат</h3>
           <input
             type="text"
-            placeholder="name..."
+            placeholder="Ваш ник..."
             onChange={(e) => {
               setUsername(e.target.value);
             }}
           />
           <input
             type="text"
-            placeholder="Room ID..."
+            placeholder="Комната..."
             onChange={(e) => {
               setRoom(e.target.value);
             }}
           />
-          <button onClick={joinRoom}>Join a Room</button>
+          <button onClick={joinRoom}>Войти в комнату</button>
         </div>
       ) : (
         <Chat socket={socket} username={username} room={room} />

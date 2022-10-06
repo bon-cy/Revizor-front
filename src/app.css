@@ -102,3 +102,13 @@
 .chat-window .chat-body .message-container::-webkit-scrollbar {
   display: none;
 }
+
+.joinChatContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  margin-bottom: 100px;
+  gap: 20px;
+}

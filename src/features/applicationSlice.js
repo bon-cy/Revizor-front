@@ -5,7 +5,8 @@ const initialState = {
   signingUp: false,
   signingIn: false,
   token: localStorage.getItem("token"),
-  id: localStorage.getItem('id')
+  id: localStorage.getItem('id'),
+  login: localStorage.getItem('login')
 };
 
 export const authSignUp = createAsyncThunk(
@@ -48,6 +49,8 @@ export const authSignIn = createAsyncThunk(
       }
       localStorage.setItem("token", token.token);
       localStorage.setItem("id", token.id);
+      localStorage.setItem("login", token.login);
+      
 
       return token;
     } catch (e) {

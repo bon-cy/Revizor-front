@@ -9,9 +9,9 @@
 
 .chat-window {
   margin: 10px auto;
-  min-height: 200px;
+  min-height: 55vh;
   border: 1px solid black;
-  width: 40%;
+  width: 60%;
   border-radius: 5px;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .chat-body {
-  height: 200px;
+  height: 55vh;
 }
 
 .chat-footer {
@@ -109,6 +109,17 @@
   justify-content: center;
   align-items: center;
   margin: 20px;
-  margin-bottom: 100px;
-  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.no_auth_warning {
+  text-align: center;
+  margin: 50px;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 80px 30px;
+  font-size: 30px;
+  font-weight: 600;
+  background-color:rgb(16, 16, 65);
+  color: white;
 }

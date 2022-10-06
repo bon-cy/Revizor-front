@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   users: [],
+  like: []
 };
 
 export const fetchUsers = createAsyncThunk("get/users", async (_, thunkAPI) => {
@@ -62,10 +63,12 @@ const userSlice = createSlice({
         state.users = state.users.map((user) => {
           if (user._id === action.payload.id) {
             user.avatar = action.payload.file.name;
-          }
+
+           }
           return user;
         });
       })
+      // .addCase()
   },
 });
 

@@ -1,3 +1,4 @@
+import { element } from "prop-types";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -11,22 +12,27 @@ const Diner = () => {
   const diners = useSelector((state) => state.diners.diners);
   const { dinerId } = useParams();
   const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(fetchDiners());
   }, [dispatch]);
-  const diner = diners.filter((elem) => {
-    if (!dinerId) return true;
 
-    return dinerId === elem._id;
-  });
+ 
+
+  const diner = diners.find((el) => {
+    return el._id === dinerId
+  })
+
+ 
+
   return (
     <>
       <div className={styles.diner_head}>
         <DinerHead diner={diner} />
       </div>
       <div className={styles.diner_main}>
-        2
-        <DinerGallery />
+        <DinerGallery diner={diner} />
+     
       </div>
 
       <div className={styles.diner_review}>
@@ -37,6 +43,8 @@ const Diner = () => {
       </div>
     </>
   );
+
+  
 };
 
 export default Diner;

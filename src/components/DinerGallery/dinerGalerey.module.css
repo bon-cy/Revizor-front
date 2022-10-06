@@ -1,12 +1,112 @@
-
-.slyderCont {
-    width: 400px;
-    height: 100px;
-    background-color: black;
-    margin-top: 20%;
+.slyder {
+  display: flex;
+  width: 100%;
+  height: 450px;
+  background-color: black;
+  overflow: hidden;
+  box-shadow: 2px 2px 15px 2px gray;
+}
+.glav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: white;
 
 }
+.slyderLine {
+  display: flex;
+  position: relative;
+  left: 0px;
+  height: 600px;
+  transition: 0.7s;
+}
+.imgCont {
+  display: flex;
+  width: 480px;
+  overflow: hidden;
+  height: 450px;
+  align-items: center;
+  justify-content: center;
+}
 .img {
-    width: 100px;
-    height: 100px;
+  width: 120%;
+  min-height: 450px;
+}
+
+.arrow {
+  margin-top: 20px;
+  width: 1200px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  width: 50px;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 10%;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+.left:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+.left:active {
+    box-shadow: 0px 0px 5px 0.2px gray;
+}
+.leftIcon {
+  width: 40px;
+  height: 15px;
+  border-radius: 20%;
+  
+}
+.right {
+    display: flex;
+    width: 50px;
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 10%;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+.right:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+.right:active {
+    box-shadow: 0px 0px 5px 0.2px gray;
+}
+.rightIcon {
+    width: 40px;
+  height: 15px;
+  border-radius: 20%;
+}
+
+
+.infoCont {
+    display: flex;
+}
+.rating {
+margin: 10px;
+}
+.middlePrice{
+    margin: 10px;
+}
+.address{
+    margin: 10px;
+}
+
+.menuImg {
+    width: 200px;
+}
+.menyCont {
+    display: flex;
 }

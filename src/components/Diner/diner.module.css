@@ -4,10 +4,10 @@
     }
     
     .diner_main {
-        height: 80vh;
+        
         background-color: rgb(176, 176, 175);
         display: flex;
-     justify-content: center;
+        justify-content: center;
     }
     
     .diner_review {

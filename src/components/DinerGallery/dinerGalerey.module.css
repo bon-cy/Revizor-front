@@ -12,7 +12,6 @@
   align-items: center;
   width: 100%;
   background-color: white;
-
 }
 .slyderLine {
   display: flex;
@@ -54,59 +53,86 @@
   transition: 0.2s;
 }
 .left:hover {
-    transform: scale(1.1);
-    transition: 0.2s;
+  transform: scale(1.1);
+  transition: 0.2s;
 }
 .left:active {
-    box-shadow: 0px 0px 5px 0.2px gray;
+  box-shadow: 0px 0px 5px 0.2px gray;
 }
 .leftIcon {
   width: 40px;
   height: 15px;
   border-radius: 20%;
-  
 }
 .right {
-    display: flex;
-    width: 50px;
-    background-color: transparent;
-    border: 1px solid gray;
-    border-radius: 10%;
-    height: 25px;
-    align-items: center;
-    justify-content: center;
-    transition: 0.2s;
+  display: flex;
+  width: 50px;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 10%;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
 }
 .right:hover {
-    transform: scale(1.1);
-    transition: 0.2s;
+  transform: scale(1.1);
+  transition: 0.2s;
 }
 .right:active {
-    box-shadow: 0px 0px 5px 0.2px gray;
+  box-shadow: 0px 0px 5px 0.2px gray;
 }
 .rightIcon {
-    width: 40px;
+  width: 40px;
   height: 15px;
   border-radius: 20%;
 }
 
-
 .infoCont {
-    display: flex;
+  display: flex;
 }
 .rating {
-margin: 10px;
+  margin: 10px;
 }
-.middlePrice{
-    margin: 10px;
+.middlePrice {
+  margin: 10px;
 }
-.address{
-    margin: 10px;
+.address {
+  margin: 10px;
+}
+
+
+
+.menyCont {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  background-color:white;
+  margin-bottom: 100px;
+}
+
+.menuImgCont {
+  width: 300px;
+  overflow: hidden;
+  margin-left: 20px;
+  height: 430px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 2%;
+  box-shadow: 2px 2px 10px 2px rgb(170, 170, 170);
+  transition: 0.3s;
+ 
+}
+.menuImgCont:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+  box-shadow: 4px 4px 10px 2px rgb(170, 170, 170);
 }
 
 .menuImg {
-    width: 200px;
-}
-.menyCont {
-    display: flex;
+  margin-top: 15%;
+  width: 300px;
+  height: 570px;
+
 }

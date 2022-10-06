@@ -41,7 +41,7 @@ const PersonalArea = () => {
             <div className={styles.main}>
               <div key={index} className={styles.profile_container}>
                 <div className={styles.avatar_container}>
-                  {user.avatar.length ? (
+                  {user.avatar?.length ? (
                     <div className={styles.avatar_img}>
                       <img
                         src={`http://localhost:4000/public/avatar/${user.avatar}`}

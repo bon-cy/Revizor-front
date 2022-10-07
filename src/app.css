@@ -75,7 +75,7 @@
 
 #other .message-content {
   justify-content: flex-end;
-  background-color: blueviolet;
+  background-color: rgb(78, 140, 255);
   padding: 5px;
   border-radius: 5px;
   color: white;

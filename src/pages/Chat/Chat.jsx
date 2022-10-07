@@ -59,7 +59,10 @@ const Chat = ({ socket, username, room }) => {
         <ScrollToBottom className="message-container">
           {messages.map((mess, index) => {
             return (
-              <div key={index} className="message">
+              <div
+                key={index}
+                className="message" id={mess.author === id ? "you" : "other"}
+              >
                 <div className="mess-wrap">
                   <div className="message-content">
                     <p>{mess.text}</p>
@@ -71,7 +74,7 @@ const Chat = ({ socket, username, room }) => {
               </div>
             );
           })}
-          {/* {messageList.map((messageContent, index) => {
+          {messageList.map((messageContent, index) => {
             return (
               <div
                 key={index}
@@ -89,7 +92,7 @@ const Chat = ({ socket, username, room }) => {
                 </div>
               </div>
             );
-          })} */}
+          })}
         </ScrollToBottom>
       </div>
       <div className="chat-footer">

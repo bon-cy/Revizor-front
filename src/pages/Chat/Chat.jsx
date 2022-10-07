@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { format } from "timeago.js";
 
 const Chat = ({ socket, username, room }) => {
   const id = useSelector((state) => state.application.id);
@@ -25,6 +26,7 @@ const Chat = ({ socket, username, room }) => {
     await axios.post("http://localhost:4000/messages", {
       text: currentMessage,
       author: id,
+
     });
 
     if (currentMessage !== "") {
@@ -61,14 +63,16 @@ const Chat = ({ socket, username, room }) => {
             return (
               <div
                 key={index}
-                className="message" id={mess.author === id ? "you" : "other"}
+                className="message"
+                id={mess.author._id === id ? "you" : "other"}
               >
                 <div className="mess-wrap">
                   <div className="message-content">
                     <p>{mess.text}</p>
                   </div>
                   <div className="message-meta">
-                    <p id="author">{mess.author}</p>
+                    <p id="time">{format(mess.createdAt)}</p>
+                    <p id="author">{mess.author.login}</p>
                   </div>
                 </div>
               </div>

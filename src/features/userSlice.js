@@ -59,8 +59,8 @@ export const addDislike = createAsyncThunk(
         },
         body: JSON.stringify({ dinerId, userId }),
       });
-      const diner = await res.json();
-      return {diner, userId};
+      const user = await res.json();
+      return user;
     } catch (e) {
       thunkAPI.rejectWithValue(e);
     }
@@ -95,8 +95,8 @@ const userSlice = createSlice({
       })
       .addCase(addDislike.fulfilled, (state, action) => {
         state.users.map(user => {
-          if(user._id === action.payload.userId){
-            user.like.filter(likes => {
+          if(user._id === action.payload.user){
+            user.like.map(likes => {
               return likes === action.payload.diner._id
             })
           }

@@ -18,9 +18,9 @@ const DinerHead = ({ diner }) => {
       return true
     }
     return false
-  }).map(user => {
-    return user.like
-  }).flat(Infinity)
+  })
+  console.log(user);
+  
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchDiners());
@@ -32,7 +32,6 @@ const DinerHead = ({ diner }) => {
   function handleDislike() {
     dispatch(addDislike({ dinerId, userId }));
   }
-  console.log(user.filter(like => {return like !== dinerId}));
   return (
     <div className={styles.head_container}>
       <div className={styles.like_review}>

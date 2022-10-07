@@ -52,6 +52,9 @@ const SignIn = ({ setModal, setToReg }) => {
 
     e.preventDefault();
     dispatch(authSignIn({ login, password,mail }));
+    setTimeout(() => {
+      window.location.reload()
+    }, 1000)
   };
 
   return (

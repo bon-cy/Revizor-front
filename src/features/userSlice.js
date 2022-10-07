@@ -1,7 +1,7 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = {
-  users: []
+  users: [],
 };
 
 export const fetchUsers = createAsyncThunk("get/users", async (_, thunkAPI) => {
@@ -24,7 +24,7 @@ export const addAvatar = createAsyncThunk(
         body: formData,
       });
       const user = await res.json();
-      return {file, id};
+      return { file, id };
     } catch (e) {
       thunkAPI.rejectWithValue(e);
     }
@@ -42,7 +42,7 @@ export const addLike = createAsyncThunk(
         body: JSON.stringify({ dinerId, userId }),
       });
       const diner = await res.json();
-      return {diner, userId};
+      return { diner, userId };
     } catch (e) {
       thunkAPI.rejectWithValue(e);
     }
@@ -59,8 +59,8 @@ export const addDislike = createAsyncThunk(
         },
         body: JSON.stringify({ dinerId, userId }),
       });
-      const diner = await res.json();
-      return {diner, userId};
+      const user = await res.json();
+      return { user, dinerId };
     } catch (e) {
       thunkAPI.rejectWithValue(e);
     }
@@ -80,29 +80,26 @@ const userSlice = createSlice({
         state.users = state.users.map((user) => {
           if (user._id === action.payload.id) {
             user.avatar = action.payload.file.name;
-
-           }
+          }
           return user;
         });
       })
       .addCase(addLike.fulfilled, (state, action) => {
-        state.users.map(user => {
-          if(user._id === action.payload.userId){
-            user.like.push(action.payload.diner)
+        state.users = state.users.map((user) => {
+          if (user._id === action.payload.userId) {
+            user.like.push(action.payload.diner);
           }
-          return user
-        })
+          return user;
+        });
       })
       .addCase(addDislike.fulfilled, (state, action) => {
-        state.users.map(user => {
-          if(user._id === action.payload.userId){
-            user.like.filter(likes => {
-              return likes === action.payload.diner._id
-            })
+        state.users = state.users.map((user) => {
+          if (user._id === action.payload.user._id) {
+            user.like = user.like.filter((liks) => liks._id !== action.payload.dinerId);
           }
-          return user
-        })
-      })
+          return user;
+        });
+      });
   },
 });
 

@@ -1,11 +1,17 @@
 
     
     .diner_main {
-        height: 50vh;
-        background-color: rgb(176, 176, 175)
+        
+        background-color: rgb(176, 176, 175);
+        display: flex;
+        justify-content: center;
     }
     
     .diner_review {
         height: 25vh;
         background-color: rgb(96, 113, 130)
+    }
+    .img {
+        width: 100px;
+        height: 100px;
     }

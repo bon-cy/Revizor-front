@@ -75,7 +75,7 @@
 
 #other .message-content {
   justify-content: flex-end;
-  background-color: blueviolet;
+  background-color: rgb(78, 140, 255);
   padding: 5px;
   border-radius: 5px;
   color: white;
@@ -90,6 +90,12 @@
 #author {
   margin-left: 5px;
   font-weight: 600;
+}
+
+.mess-wrap {
+  max-width: 70%;
+  word-wrap: break-word;
+  margin: 5px 0;
 }
 
 .chat-window .chat-body .message-container {
@@ -120,6 +126,6 @@
   padding: 80px 30px;
   font-size: 30px;
   font-weight: 600;
-  background-color:rgb(16, 16, 65);
+  background-color: rgb(16, 16, 65);
   color: white;
 }

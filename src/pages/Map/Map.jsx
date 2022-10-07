@@ -69,7 +69,7 @@ const Map = () => {
             </div>
         </div>
 
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adbefedd6e1119ed478d3688afea19c8590b50b785bdc0de5fd75dcb1b3e738b6&amp;source=constructor" width="980" height="519" frameBorder="0"></iframe>
+        <iframe title="mapYandex" src="https://yandex.ru/map-widget/v1/?um=constructor%3Adbefedd6e1119ed478d3688afea19c8590b50b785bdc0de5fd75dcb1b3e738b6&amp;source=constructor" width="980" height="519" frameBorder="0"></iframe>
       </div>
     </div>
   );

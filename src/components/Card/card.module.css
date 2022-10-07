@@ -23,12 +23,7 @@
     top: -10px;
 }
 .mark_active{
-    cursor: pointer;
-    font-size: 30px;
-    position: absolute;
-    z-index: 99;
     color: #f2b203;
-    right: 10%;
     top: 0px;
 }
 .main:hover img{

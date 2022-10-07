@@ -1,8 +1,8 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { io } from "socket.io-client";
 import Chat from "./Chat";
-
+import styles from "./chat.module.css";
 
 const socket = io.connect("http://localhost:3001");
 
@@ -11,8 +11,6 @@ const ChatPage = () => {
   const username = useSelector((state) => state.application.login);
   const room = "general";
 
-
-  
 
   useEffect(() => {
     const joinRoom = () => {
@@ -24,17 +22,21 @@ const ChatPage = () => {
   }, []);
 
   return (
-    <>
+    <div className={styles.chat_page_body}>
       {token ? (
-        <div className="joinChatContainer">
-          <Chat socket={socket} username={username} room={room} />
+        <div className={styles.joinChatContainer}>
+          <Chat
+            socket={socket}
+            username={username}
+            room={room}
+          />
         </div>
       ) : (
-        <div className="no_auth_warning">
+        <div className={styles.no_auth_warning}>
           Чтобы зайти в чат, вы должны быть авторизованы!
         </div>
       )}
-    </>
+    </div>
   );
 };
 

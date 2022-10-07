@@ -1,13 +1,14 @@
 .main{
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px 3px gray;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.654);
+    height: 400px;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: bisque;
+    /* background-color: bisque; */
 }
 
 .main hr{
@@ -42,14 +43,14 @@ input[type="number"]:focus {
     width: 70%;
     border-radius: 10px;
     margin-left: 10px;
-    border: 1px solid black;
+    border: none;
     padding: 10px;
-    background-color: #f2b203;
+    background-color:#d58113;
     font-size: 15px;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 .price::placeholder{
-    color: black;
+    color: rgb(255, 255, 255);
 }
 .price:focus{
     background-color: white;

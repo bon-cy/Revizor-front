@@ -44,7 +44,7 @@ const Card = ({ diner }) => {
         icon={faBookmark}
         className={
           like.find((diner) => diner._id === dinerId)
-            ? styles.mark_active
+            ? `${styles.mark_active} ${styles.mark}`
             : styles.mark
         }
         onClick={

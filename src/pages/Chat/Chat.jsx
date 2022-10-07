@@ -1,11 +1,32 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
+import axios from "axios";
+import { useSelector } from "react-redux";
 
 const Chat = ({ socket, username, room }) => {
+  const id = useSelector((state) => state.application.id);
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    const getMessages = async () => {
+      try {
+        const res = await axios.get("http://localhost:4000/messages");
+        setMessages(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getMessages();
+  }, []);
 
   const sendMessage = async () => {
+    await axios.post("http://localhost:4000/messages", {
+      text: currentMessage,
+      author: id,
+    });
+
     if (currentMessage !== "") {
       const messageData = {
         room: room,
@@ -36,9 +57,24 @@ const Chat = ({ socket, username, room }) => {
       </div>
       <div className="chat-body">
         <ScrollToBottom className="message-container">
-          {messageList.map((messageContent, index) => {
+          {messages.map((mess, index) => {
             return (
-              <div key={index}
+              <div key={index} className="message">
+                <div className="mess-wrap">
+                  <div className="message-content">
+                    <p>{mess.text}</p>
+                  </div>
+                  <div className="message-meta">
+                    <p id="author">{mess.author}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+          {/* {messageList.map((messageContent, index) => {
+            return (
+              <div
+                key={index}
                 className="message"
                 id={username === messageContent.author ? "you" : "other"}
               >
@@ -53,7 +89,7 @@ const Chat = ({ socket, username, room }) => {
                 </div>
               </div>
             );
-          })}
+          })} */}
         </ScrollToBottom>
       </div>
       <div className="chat-footer">

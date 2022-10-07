@@ -85,7 +85,7 @@ const userSlice = createSlice({
         });
       })
       .addCase(addLike.fulfilled, (state, action) => {
-        state.users.map((user) => {
+        state.users = state.users.map((user) => {
           if (user._id === action.payload.userId) {
             user.like.push(action.payload.diner);
           }
@@ -93,16 +93,9 @@ const userSlice = createSlice({
         });
       })
       .addCase(addDislike.fulfilled, (state, action) => {
-        var elem = 0
-        state.users.map((user) => {
+        state.users = state.users.map((user) => {
           if (user._id === action.payload.user._id) {
-            user.like.map((like, index) => {
-              if (like._id === action.payload.dinerId) {
-                elem = index
-              }
-              user.like.pop(elem)
-              return like;
-            });
+            user.like = user.like.filter((liks) => liks._id !== action.payload.dinerId);
           }
           return user;
         });

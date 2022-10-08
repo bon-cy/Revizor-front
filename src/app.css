@@ -2,130 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Ubuntu, Arial, Helvetica, sans-serif;
+  
 }
 .container {
   width: 100%;
+  background-color: rgb(15, 23, 36);
+  
 }
 
-.chat-window {
-  margin: 10px auto;
-  min-height: 55vh;
-  border: 1px solid black;
-  width: 60%;
-  border-radius: 5px;
-}
-
-.chat-header {
-  background-color: black;
-  padding: 5px;
-}
-
-.chat-header p {
-  margin: 0;
-  color: wheat;
-  text-align: center;
-  font-weight: 600;
-}
-
-.chat-body {
-  height: 55vh;
-}
-
-.chat-footer {
+/* .container {
   width: 100%;
-}
-
-.chat-footer input {
-  width: 90%;
-  padding: 5px;
-}
-
-.chat-footer button {
-  padding: 5px;
-
-  width: 10%;
-}
-
-.message {
-  display: flex;
-  margin: 5px;
-}
-
-#you {
-  justify-content: flex-start;
-}
-
-#you .message-content {
-  justify-content: flex-start;
-  background-color: rgb(15, 199, 15);
-  padding: 5px;
-  border-radius: 5px;
-  color: white;
-}
-
-#you .message-meta {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 5px;
-}
-
-#other {
-  justify-content: flex-end;
-}
-
-#other .message-content {
-  justify-content: flex-end;
-  background-color: rgb(78, 140, 255);
-  padding: 5px;
-  border-radius: 5px;
-  color: white;
-}
-
-#other .message-meta {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 5px;
-}
-
-#author {
-  margin-left: 5px;
-  font-weight: 600;
-}
-
-.mess-wrap {
-  max-width: 70%;
-  word-wrap: break-word;
-  margin: 5px 0;
-}
-
-.chat-window .chat-body .message-container {
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-.chat-window .chat-body .message-container::-webkit-scrollbar {
-  display: none;
-}
-
-.joinChatContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  margin-bottom: 50px;
-}
-
-.no_auth_warning {
-  text-align: center;
-  margin: 50px;
-  border: 3px solid black;
-  border-radius: 10px;
-  padding: 80px 30px;
-  font-size: 30px;
-  font-weight: 600;
-  background-color: rgb(16, 16, 65);
-  color: white;
-}
+  
+} */

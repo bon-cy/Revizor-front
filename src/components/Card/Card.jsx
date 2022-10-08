@@ -25,17 +25,16 @@ const Card = ({ diner }) => {
     })
     .flat(Infinity);
 
-
   useEffect(() => {
     dispatch(fetchDiners());
     dispatch(fetchUsers());
   }, [dispatch]);
   function handleLike() {
-    console.log('like');
+    console.log("like");
     dispatch(addLike({ dinerId, userId }));
   }
   function handleDislike() {
-    console.log('dis');
+    console.log("dis");
     dispatch(addDislike({ dinerId, userId }));
   }
   return (
@@ -57,9 +56,9 @@ const Card = ({ diner }) => {
         <img src={`http://localhost:4000/img/${diner.name}.jpg`} alt="" />
       </div>
       <h3>{diner.name}</h3>
-      <hr />
+      {/* <hr /> */}
       <span className={styles.raiting}>{diner.raiting}★★★★★</span>
-      {diner.address}
+      <p className={styles.address}>{diner.address}</p>
       <button>
         <Link
           style={{ textDecoration: "none", color: "white" }}

@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import styles from "./chat.module.css";
 import { format } from "timeago.js";
 
-const Chat = ({ socket, username, room }) => {
+const Chat = ({ socket, username, room, avatar}) => {
   const id = useSelector((state) => state.application.id);
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
@@ -26,7 +27,6 @@ const Chat = ({ socket, username, room }) => {
     await axios.post("http://localhost:4000/messages", {
       text: currentMessage,
       author: id,
-
     });
 
     if (currentMessage !== "") {
@@ -34,6 +34,7 @@ const Chat = ({ socket, username, room }) => {
         room: room,
         author: username,
         message: currentMessage,
+        avatar: avatar,
         time:
           new Date(Date.now()).getHours() +
           ":" +
@@ -53,53 +54,69 @@ const Chat = ({ socket, username, room }) => {
   }, [socket]);
 
   return (
-    <div className="chat-window">
-      <div className="chat-header">
-        <p>Live Chat</p>
-      </div>
-      <div className="chat-body">
-        <ScrollToBottom className="message-container">
-          {messages.map((mess, index) => {
-            return (
-              <div
-                key={index}
-                className="message"
-                id={mess.author._id === id ? "you" : "other"}
-              >
-                <div className="mess-wrap">
-                  <div className="message-content">
-                    <p>{mess.text}</p>
-                  </div>
-                  <div className="message-meta">
-                    <p id="time">{format(mess.createdAt)}</p>
-                    <p id="author">{mess.author.login}</p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-          {messageList.map((messageContent, index) => {
-            return (
-              <div
-                key={index}
-                className="message"
-                id={username === messageContent.author ? "you" : "other"}
-              >
-                <div className="mess-wrap">
-                  <div className="message-content">
-                    <p>{messageContent.message}</p>
-                  </div>
-                  <div className="message-meta">
-                    <p id="time">{messageContent.time}</p>
-                    <p id="author">{messageContent.author}</p>
+    <>
+      <div className={styles.chat_window}>
+        <div className={styles.chat_header}>
+          <p>Live Chat</p>
+        </div>
+        <div className={styles.chat_body}>
+          <ScrollToBottom className={styles.message_container}>
+            {messages.map((mess, index) => {
+              return (
+                <div
+                  key={index}
+                  className={styles.message}
+                  id={mess.author._id === id ? styles.you : styles.other}
+                >
+                  <img
+                    src={`http://localhost:4000/public/avatar/${mess.author.avatar}`}
+                    alt=""
+                  />
+                  <div className={styles.mess_wrap}>
+                    <div className={styles.message_content}>
+                      <p>{mess.text}</p>
+                    </div>
+                    <div className={styles.message_meta}>
+                      <p id={styles.time}>{format(mess.createdAt)}</p>
+                      <p id={styles.author}>{mess.author.login}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </ScrollToBottom>
+              );
+            })}
+            {messageList.map((messageContent, index) => {
+
+              return (
+                <div
+                  key={index}
+                  className={styles.message}
+                  id={
+                    username === messageContent.author
+                      ? styles.you
+                      : styles.other
+                  }
+                >
+                   <img
+                    src={`http://localhost:4000/public/avatar/${messageContent.avatar}`}
+                    alt=""
+                  />
+    
+                  <div className={styles.mess_wrap}>
+                    <div className={styles.message_content}>
+                      <p>{messageContent.message}</p>
+                    </div>
+                    <div className={styles.message_meta}>
+                      <p id={styles.time}>{messageContent.time}</p>
+                      <p id={styles.author}>{messageContent.author}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </ScrollToBottom>
+        </div>
       </div>
-      <div className="chat-footer">
+      <div className={styles.chat_footer}>
         <input
           type="text"
           value={currentMessage}
@@ -111,7 +128,7 @@ const Chat = ({ socket, username, room }) => {
         />
         <button onClick={sendMessage}>&#9658;</button>
       </div>
-    </div>
+    </>
   );
 };
 

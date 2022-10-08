@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import styles from "./chat.module.css";
 import { format } from "timeago.js";
 
-const Chat = ({ socket, username, room}) => {
+const Chat = ({ socket, username, room, avatar}) => {
   const id = useSelector((state) => state.application.id);
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
@@ -34,6 +34,7 @@ const Chat = ({ socket, username, room}) => {
         room: room,
         author: username,
         message: currentMessage,
+        avatar: avatar,
         time:
           new Date(Date.now()).getHours() +
           ":" +
@@ -95,6 +96,10 @@ const Chat = ({ socket, username, room}) => {
                       : styles.other
                   }
                 >
+                   <img
+                    src={`http://localhost:4000/public/avatar/${messageContent.avatar}`}
+                    alt=""
+                  />
     
                   <div className={styles.mess_wrap}>
                     <div className={styles.message_content}>

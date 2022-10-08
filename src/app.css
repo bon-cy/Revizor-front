@@ -2,8 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Ubuntu, Arial, Helvetica, sans-serif;
+  
 }
 .container {
   width: 100%;
+  background-color: rgb(15, 23, 36);
+  
 }
 
+/* .container {
+  width: 100%;
+  
+} */

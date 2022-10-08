@@ -9,6 +9,7 @@ const socket = io.connect("http://localhost:3001");
 const ChatPage = () => {
   const token = useSelector((state) => state.application.token);
   const username = useSelector((state) => state.application.login);
+  const avatar = useSelector((state) => state.application.avatar)
   const room = "general";
 
 
@@ -29,6 +30,7 @@ const ChatPage = () => {
             socket={socket}
             username={username}
             room={room}
+            avatar={avatar}
           />
         </div>
       ) : (

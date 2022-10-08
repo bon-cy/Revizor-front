@@ -49,9 +49,10 @@ const Header = () => {
             <p>Отзыв</p>
           </div>
           {id ? (
+            <div>
             <Link to={`/personal/${id}`} className={styles.profil}>
               <FontAwesomeIcon icon={faUserSecret} />
-            </Link>
+            </Link></div>
           ) : (
             <button onClick={handleAuth} className={styles.auth_btn}>
               Войти

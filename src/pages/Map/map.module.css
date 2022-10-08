@@ -3,10 +3,10 @@
   background-color: transparent;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 5%;
+  margin: 5% 0;
 }
 
-
+/* 
 .kart {
   margin-top: 5%;
   width: 980px;
@@ -216,4 +216,4 @@
 }
 .position3 {
   margin-top: 5%;
-}
+} */

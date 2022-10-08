@@ -14,7 +14,6 @@ const Map = () => {
     setMarkerWind(styles.markerWind);
   };
 
-
   const [markerWind2, setMarkerWind2] = useState(styles.markerWind2);
 
   const handleMouseOver2 = () => {
@@ -23,7 +22,6 @@ const Map = () => {
   const handleMouseOut2 = () => {
     setMarkerWind2(styles.markerWind2);
   };
-
 
   const [markerWind3, setMarkerWind3] = useState(styles.markerWind3);
 
@@ -36,7 +34,13 @@ const Map = () => {
 
   return (
     <div className={styles.map}>
-      <div className={styles.kart}>
+      <iframe
+        src="https://yandex.ru/map-widget/v1/?um=constructor%3A4d70bc60c03110cd1d592db84bb7f29008d789dc484e21d6556492d615571bcc&amp;source=constructor"
+        width="86%"
+        height="400"
+        frameBorder="0"
+      ></iframe>
+      {/* <div className={styles.kart}>
         <div className={styles.markers}>
 
           <FontAwesomeIcon className={styles.marker} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}icon={faLocationDot} />
@@ -70,7 +74,7 @@ const Map = () => {
         </div>
 
         <iframe title="mapYandex" src="https://yandex.ru/map-widget/v1/?um=constructor%3Adbefedd6e1119ed478d3688afea19c8590b50b785bdc0de5fd75dcb1b3e738b6&amp;source=constructor" width="980" height="519" frameBorder="0"></iframe>
-      </div>
+      </div> */}
     </div>
   );
 };

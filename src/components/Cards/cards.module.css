@@ -1,4 +1,4 @@
-/* .cards_container{
+.cards_container{
     width: 100%;
     display: flex;
     background-color: #f2f2f2;
@@ -13,14 +13,16 @@
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-} */
+}
 
-.cards_container{
+/*  = = == dark theme  = = =  * /
+
+/* .cards_container{
     width: 100%;
     display: flex;
     background-color: rgb(15, 23, 36);
     padding: 0 5%;
-    color: rgb(198, 211, 231); /*  new   style*/
+    color: rgb(198, 211, 231); 
 
 }
 .saidBar_container{
@@ -32,4 +34,4 @@
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-}
+} */

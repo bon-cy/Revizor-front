@@ -6,42 +6,28 @@
 }
 
 .info1 {
-  border: 1px solid rgb(198, 211, 231);/*   new stile   = = = = = == */
+  border: 1px solid rgba(0, 0, 0, 0.244);
   padding: 20px;
   width: 32%;
   text-align: center;
-  padding-bottom: 40px;
-
 }
 
 .info2 {
-  border: 2px solid rgb(198, 211, 231);/*   new stile   = = = = = == */
+  border: 1px solid rgba(0, 0, 0, 0.244);
   width: 32%;
   padding: 20px;
   text-align: center;
-  padding-bottom: 40px;
-
 }
 
 .info3 {
-  border: 1px solid rgb(198, 211, 231);/*   new stile   = = = = = == */
+  border: 1px solid rgba(0, 0, 0, 0.244);
   width: 32%;
   padding: 20px;
   text-align: center;
-  padding-bottom: 40px;
 }
 
 h3 {
   text-align: center;
-  color: rgb(239, 192, 104);/*   new stile   = = = = = == */
+  color: rgb(223, 153, 23);
   margin-bottom: 10px;
-  height: 50px;
-}
-
-
-/*   new stile   = = = = = == */
-.general {
-  background-color: rgb(15, 23, 36);
-  color: rgb(198, 211, 231);
-
 }

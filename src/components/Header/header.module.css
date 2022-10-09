@@ -1,4 +1,5 @@
 /*/////////////////=== =LOGO= = = = //////////////*/
+
 * {
   font-family: "Montserrat", sans-serif;
 }
@@ -10,7 +11,7 @@
 
   display: flex;
   flex-direction: row;
-  padding: 0 12%;
+  padding: 0 8%;
   justify-content: space-between;
   -webkit-box-shadow: 0px -5px 20px -5px rgba(34, 60, 80, 0.78) inset;
   -moz-box-shadow: 0px -5px 20px -5px rgba(34, 60, 80, 0.78) inset;
@@ -20,6 +21,7 @@
 .header_items {
   display: flex;
   flex-direction: row;
+  width: 65%;
 }
 
 @media screen and (max-width: 1100px) {
@@ -44,7 +46,7 @@
   }
 
   .header_input {
-    width: 320px !important;
+    width: 220px !important;
   }
 
   .auth_btn {
@@ -96,7 +98,7 @@
 }
 
 .header_input {
-  width: 350px;
+  width: 320px;
   height: 45px;
   font-size: 18px;
   border-radius: 1000px;
@@ -135,8 +137,9 @@
 .review_and_btn {
   display: flex;
   align-content: center;
-  justify-content: center;
-  margin: auto;
+  justify-content: flex-end;
+  margin: auto 0;
+  width: 50%;
 }
 .profil {
   padding: 5px;
@@ -228,7 +231,7 @@
 }
 
 .chat_link {
-  font-size: 16px !important;
+  font-size: 18px !important;
   font-weight: 600 !important;
   cursor: pointer;
   border-radius: 1000px;

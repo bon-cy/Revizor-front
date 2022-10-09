@@ -60,7 +60,7 @@ const SaidBar = ({price, setPrice}) => {
       <input
       className={styles.price}
         type="number"
-        placeholder="Средняя цена не больше..."
+        placeholder="Не больше..."
         value={price}
         onChange={(e) => {
           setPrice(e.target.value);

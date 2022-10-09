@@ -1,15 +1,37 @@
 .cards_container{
     width: 100%;
     display: flex;
+    background-color: #f2f2f2;
+    padding: 0 5%;
 }
 .saidBar_container{
     padding: 10px;
-    width: 30%;
+    width: 20%;
 }
 .card_container{
     padding: 10px;
-    width: 70%;
+    width: 80%;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
 }
+
+/*  = = == dark theme  = = =  * /
+
+/* .cards_container{
+    width: 100%;
+    display: flex;
+    background-color: rgb(15, 23, 36);
+    padding: 0 5%;
+    color: rgb(198, 211, 231); 
+
+}
+.saidBar_container{
+    padding: 10px;
+    width: 20%;
+}
+.card_container{
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+} */

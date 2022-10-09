@@ -5,6 +5,7 @@
   background-color: black;
   overflow: hidden;
   box-shadow: 2px 2px 15px 2px gray;
+  position: relative;
 }
 .glav {
   display: flex;
@@ -43,14 +44,18 @@
 
 .left {
   display: flex;
-  width: 50px;
-  background-color: transparent;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.53);
   border: 1px solid gray;
-  border-radius: 10%;
-  height: 25px;
+  border-radius: 50%;
   align-items: center;
   justify-content: center;
-  transition: 0.2s;
+  transition: linear 0.4s;
+  position: absolute;
+  left: 40px;
+  top: 45%;
+
 }
 .left:hover {
   transform: scale(1.1);
@@ -66,14 +71,17 @@
 }
 .right {
   display: flex;
-  width: 50px;
-  background-color: transparent;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.53);
   border: 1px solid gray;
-  border-radius: 10%;
-  height: 25px;
+  border-radius: 50%;
   align-items: center;
   justify-content: center;
-  transition: 0.2s;
+  transition: linear 0.4s;
+  position: absolute;
+  right: 40px;
+  top: 45%;
 }
 .right:hover {
   transform: scale(1.1);

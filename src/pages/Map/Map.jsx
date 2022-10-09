@@ -41,7 +41,7 @@ const Map = () => {
 
           <FontAwesomeIcon className={styles.marker} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}icon={faLocationDot} />
             <div className={markerWind} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            <img className={styles.markerWindImg}alt=""src="https://avatars.mds.yandex.net/get-altay/4612894/2a000001810c596481a575353a9acbdeec58/XXL"></img>
+            <img className={styles.markerWindImg}alt=""src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuEzhXN5m5I0jr27P6aHfoOkGXPWaJ3yLtHA&usqp=CAU"></img>
             <div className={styles.winContent}>
             <div className={styles.name}>DodoPizza</div>
             <div className={styles.position}>ул.Назарбфева </div>
@@ -69,7 +69,7 @@ const Map = () => {
             </div>
         </div>
 
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adbefedd6e1119ed478d3688afea19c8590b50b785bdc0de5fd75dcb1b3e738b6&amp;source=constructor" width="980" height="519" frameBorder="0"></iframe>
+        <iframe title="mapYandex" src="https://yandex.ru/map-widget/v1/?um=constructor%3Adbefedd6e1119ed478d3688afea19c8590b50b785bdc0de5fd75dcb1b3e738b6&amp;source=constructor" width="980" height="519" frameBorder="0"></iframe>
       </div>
     </div>
   );

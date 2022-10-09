@@ -6,7 +6,7 @@ import pochta from "../../public/pochta.png";
 import telega from "../../public/telega.png";
 import whatsapp from "../../public/whatsapp.png";
 import youtube from "../../public/youtube.png";
-import trip from "../../public/trip.png";
+import trip from "../../public/logo2.png";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
       <div className={styles.subGeneral}>
         <div className={styles.block1}>
           <img width="50px" src={trip} alt="" />
-          <p>Работаем для Вас с 1991 года</p>
+          <p>Работаем для Вас с 1991 года!</p>
         </div>
         <div className={styles.block2}>
           <img width="50px" src={facebook} />
@@ -26,7 +26,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.dno}>
-        <p>© Tripadvisor LLC, 2022 г. Все права защищены.</p>
+        <p>© GogoLь-MogoLь, 2022 г. Все права защищены.</p>
       </div>
     </footer>
   );

@@ -14,14 +14,17 @@ const DinerHead = ({ diner }) => {
   const userId = useSelector((state) => state.application.id);
   const users = useSelector((state) => state.users.users);
 
-  const user = users.filter(user => {
-    if(user._id === userId){
-      return true
-    }
-    return false
-  }).map(user => {
-    return user.like
-  }).flat(Infinity)
+  const like = users
+    .filter((user) => {
+      if (user._id === userId) {
+        return true;
+      }
+      return false;
+    })
+    .map((user) => {
+      return user.like;
+    })
+    .flat(Infinity);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchDiners());
@@ -33,18 +36,27 @@ const DinerHead = ({ diner }) => {
   function handleDislike() {
     dispatch(addDislike({ dinerId, userId }));
   }
-  console.log(user.filter(like => {return like !== dinerId}));
   return (
     <div className={styles.head_container}>
       <div className={styles.like_review}>
         <FontAwesomeIcon
-          className={user.find( diner => diner._id === dinerId) ? styles.like_active : styles.like}
-          onClick={user.find( diner => diner._id === dinerId) ? () => handleDislike() : () => handleLike()}
+          className={
+            like.find((diner) => diner._id === dinerId)
+              ? styles.like_active
+              : styles.like
+          }
+          onClick={
+            like.find((diner) => diner._id === dinerId)
+              ? () => handleDislike()
+              : () => handleLike()
+          }
           icon={faHeart}
         />
         <FontAwesomeIcon className={styles.feather} icon={faFeather} />
       </div>
-      <div className={styles.diner_name}><h1 key={diner._id}>{diner.name}</h1></div>
+      <div className={styles.diner_name}>
+        <h1>{diner?.name}</h1>
+      </div>
       <div className={styles.links}>
         <FontAwesomeIcon className={styles.instagram} icon={faInstagram} />
         <span>+7(938) 569-32-43</span>

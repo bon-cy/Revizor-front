@@ -18,7 +18,8 @@
 }
 
 .chat_ava img {
-  width: 80%;
+  width: 250px;
+  height: 250px;
   border-radius: 45%;
   margin-left: 15%;
   margin-top: 30%;

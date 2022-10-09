@@ -6,7 +6,7 @@ const Picture = () => {
     <div className={styles.picture}>
       <h1>Найдите идеальный ресторан</h1>
       <input placeholder="Введите название ресторана..." type="text" />
-      <img className={styles.lupa} src="lupa.png" alt="" />
+      <img className={styles.lupa} src={"http://localhost:4000/public/lupa.png"} alt="" />
     </div>
   );
 };

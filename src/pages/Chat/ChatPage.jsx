@@ -26,10 +26,7 @@ const ChatPage = () => {
       {token ? (
         <div className={styles.chat_wrapper}>
           <div className={styles.chat_ava}>
-            <img
-              src={`http://localhost:4000/public/avatar/${avatar}`}
-              alt=""
-            />
+            <img src={`http://localhost:4000/public/avatar/${avatar}`} alt="" />
             <h2>{username}</h2>
           </div>
           <div className={styles.joinChatContainer}>

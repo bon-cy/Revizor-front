@@ -23,36 +23,42 @@ const Header = () => {
       <div className={styles.header}>
         <div className={styles.header_items}>
           <div className={styles.logo}>
-            <img src="logo.png" alt="" />
+            <img src={"http://localhost:4000/public/logo.png"} alt="" />
           </div>
           <p>
             <Link to="/" className={styles.site_name}>
-              GogoLь-MogoLь
+              GOGOL-MOGOL
             </Link>
           </p>
           <div>
             <input className={styles.header_input} type="text" />
-            <img className={styles.lupa} src="lupa.png" alt="" />
+            <img
+              className={styles.lupa}
+              src={"http://localhost:4000/public/lupa.png"}
+              alt=""
+            />
           </div>
         </div>
         <div className={styles.review_and_btn}>
           {token && (
             <p>
               <Link to="/chat" className={styles.chat_link}>
+                <img src={"http://localhost:4000/public/chat.png"} alt="" />
                 Чат
               </Link>
             </p>
           )}
 
           <div className={styles.review}>
-            <img src="pencil.png" alt="" />
+            <img src={"http://localhost:4000/public/pencil.png"} alt="" />
             <p>Отзыв</p>
           </div>
           {id ? (
             <div>
-            <Link to={`/personal/${id}`} className={styles.profil}>
-              <FontAwesomeIcon icon={faUserSecret} />
-            </Link></div>
+              <Link to={`/personal/${id}`} className={styles.profil}>
+                <FontAwesomeIcon color="orangered" icon={faUserSecret} />
+              </Link>
+            </div>
           ) : (
             <button onClick={handleAuth} className={styles.auth_btn}>
               Войти

@@ -41,7 +41,7 @@ const Map = () => {
 
           <FontAwesomeIcon className={styles.marker} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}icon={faLocationDot} />
             <div className={markerWind} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            <img className={styles.markerWindImg}alt=""src="https://avatars.mds.yandex.net/get-altay/4612894/2a000001810c596481a575353a9acbdeec58/XXL"></img>
+            <img className={styles.markerWindImg}alt=""src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuEzhXN5m5I0jr27P6aHfoOkGXPWaJ3yLtHA&usqp=CAU"></img>
             <div className={styles.winContent}>
             <div className={styles.name}>DodoPizza</div>
             <div className={styles.position}>ул.Назарбфева </div>

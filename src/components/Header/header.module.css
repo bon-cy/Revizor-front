@@ -21,7 +21,7 @@
 .header_items {
   display: flex;
   flex-direction: row;
-  width: 50%;
+  width: 65%;
 }
 
 @media screen and (max-width: 1100px) {
@@ -32,7 +32,6 @@
   .logo {
     width: 45px !important;
     height: 45px !important;
-    font-size: 50px;
   }
 
   .logo img {
@@ -65,8 +64,14 @@
 }
 
 .logo {
+  margin: auto 0;
   width: 55px;
   height: 55px;
+  border: none;
+  border-radius: 100px;
+  background-color: #34e0a1;
+  position: relative;
+  margin-right: 5px;
 }
 
 .logo img {
@@ -75,7 +80,7 @@
   left: 2px;
   margin: 0 auto;
   width: 50px;
-  height: 32px
+  height: 32px;
 }
 
 .header p {
@@ -93,7 +98,7 @@
 }
 
 .header_input {
-  width: 350px;
+  width: 320px;
   height: 45px;
   font-size: 18px;
   border-radius: 1000px;

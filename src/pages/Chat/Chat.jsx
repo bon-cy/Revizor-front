@@ -57,7 +57,7 @@ const Chat = ({ socket, username, room, avatar}) => {
     <>
       <div className={styles.chat_window}>
         <div className={styles.chat_header}>
-          <p>Live Chat</p>
+          <p>{`Добро пожаловать в чат, ${username}`}</p>
         </div>
         <div className={styles.chat_body}>
           <ScrollToBottom className={styles.message_container}>

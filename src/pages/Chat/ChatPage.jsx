@@ -9,9 +9,8 @@ const socket = io.connect("http://localhost:3001");
 const ChatPage = () => {
   const token = useSelector((state) => state.application.token);
   const username = useSelector((state) => state.application.login);
-  const avatar = useSelector((state) => state.application.avatar)
+  const avatar = useSelector((state) => state.application.avatar);
   const room = "general";
-
 
   useEffect(() => {
     const joinRoom = () => {
@@ -25,13 +24,22 @@ const ChatPage = () => {
   return (
     <div className={styles.chat_page_body}>
       {token ? (
-        <div className={styles.joinChatContainer}>
-          <Chat
-            socket={socket}
-            username={username}
-            room={room}
-            avatar={avatar}
-          />
+        <div className={styles.chat_wrapper}>
+          <div className={styles.chat_ava}>
+            <img
+              src={`http://localhost:4000/public/avatar/${avatar}`}
+              alt=""
+            />
+            <h2>{username}</h2>
+          </div>
+          <div className={styles.joinChatContainer}>
+            <Chat
+              socket={socket}
+              username={username}
+              room={room}
+              avatar={avatar}
+            />
+          </div>
         </div>
       ) : (
         <div className={styles.no_auth_warning}>

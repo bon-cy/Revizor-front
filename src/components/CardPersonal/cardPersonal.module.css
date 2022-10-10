@@ -1,0 +1,47 @@
+.personal_card {
+  border: 1px solid rgb(243, 243, 243);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.personal_card:hover {
+    box-shadow: 0px 0px 10px 3px rgba(177, 177, 177, 0.654);
+
+}
+
+.personal_card img {
+  width: 170px;
+  height: 120px;
+}
+
+.personal_card h3 {
+  font-size: 16px;
+}
+
+.personal_card .rating {
+  font-size: 18px;
+}
+
+.personal_card p {
+  font-size: 12px;
+}
+
+.personal_card button {
+  background-color: rgb(255, 149, 0);
+  border: none;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.rating {
+  color: #f2b203;
+}
+.ratingDis {
+  color: black;
+}
+

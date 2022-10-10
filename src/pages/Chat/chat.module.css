@@ -1,47 +1,26 @@
 .chat_page_body {
+  width: 100%;
   display: flex;
   flex-direction: row;
   background-image: url("https://kartinkin.net/pics/uploads/posts/2022-08/1660356252_13-kartinkin-net-p-oboi-telegramm-standartnie-krasivo-14.jpg");
 }
 
 .joinChatContainer {
-  width: 100%;
+  width: 60%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
-}
-
-.chat_wrapper {
-  display: flex;
-  width: 100%;
-}
-
-.chat_ava img {
-  width: 250px;
-  height: 250px;
-  border-radius: 45%;
-  margin-left: 15%;
-  margin-top: 30%;
-}
-
-.chat_ava h2 {
-  color: white;
-  text-align: center;
-  font-size: 30px;
-  margin-top: 10px;
-  margin-left: 15%;
-
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .chat_window {
   background-color: rgb(228, 237, 233);
-  margin: 10px auto;
-  margin-left: 5%;
+  margin-top: 10px;
   margin-bottom: 5px;
   min-height: 75vh;
   border: 1px solid #128c7e;
-  width: 60%;
+  width: 100%;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 20px 100px 10px rgb(203, 203, 203);
@@ -65,9 +44,10 @@
 }
 
 .chat_footer {
-  width: 60%;
+  width: 100%;
   margin: 0 5%;
   margin-bottom: 20px;
+  
 }
 
 .chat_footer input {

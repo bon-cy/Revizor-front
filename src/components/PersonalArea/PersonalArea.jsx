@@ -9,7 +9,7 @@ import styles from "./personalArea.module.css";
 
 const PersonalArea = () => {
   const [drag, setDrag] = useState(false);
-  const [active, setActive] = useState("fav");
+  const [active, setActive] = useState("info");
 
   const users = useSelector((state) => state.users.users);
   const dispatch = useDispatch();
@@ -31,6 +31,22 @@ const PersonalArea = () => {
     let file = e.dataTransfer.files[0];
     dispatch(addAvatar({ file, id }));
     setDrag(false);
+  }
+
+  const handleInfo = () => {
+    setActive("info");
+  };
+
+  const handleFav = () => {
+    setActive("fav");
+  };
+
+  const handleReviews = () => {
+    setActive('reviews')
+  }
+
+  const handleExit = () => {
+    setActive('exit')
   }
 
   return (
@@ -77,24 +93,30 @@ const PersonalArea = () => {
 
                   <div className={styles.user_informatins}>
                     <span className={styles.login}>{user.login}</span>
-                    {/* <span className={styles.mail}>{user.mail}</span>
-                  <p className={styles.fav}>Мои избранные</p>
-                  <p className={styles.reviews}>Мои отзывы</p>
-                  <p className={styles.logOut}>Выйти из аккаунта</p> */}
                   </div>
                 </div>
                 <div className={styles.card_and_navbar}>
                   <div className={styles.personal_navbar}>
-                    <div>Личные данные</div>
-                    <div className={styles.fav}>Мои избранные</div>
-                    <div className={styles.MyReviews}>Мои отзывы</div>
-                    <div>Выйти</div>
+                    <div onClick={handleInfo} className={active === 'info' && styles.isActive} >Личные данные</div>
+                    <div onClick={handleFav} className={active === 'fav' && styles.isActive}>
+                      Мои избранные
+                    </div>
+                    <div onClick={handleReviews} className={active === 'reviews' && styles.isActive} >Мои отзывы</div>
+                    <div onClick={handleExit}  className={active === 'exit' && styles.isActive} >Выйти</div>
                   </div>
-                  <div className={styles.card}>
-                    {user.like.map((card) => {
-                      return <Card key={card._id} diner={card} />;
-                    })}
-                  </div>
+                  {active === "info" && (
+                    <div className={styles.pers_info}>
+                      <div>Логин: {user.login}</div>
+                      <div>Email: {user.mail}</div>
+                    </div>
+                  )}
+                  {active === "fav" && (
+                    <div className={styles.card}>
+                      {user.like.map((card) => {
+                        return <Card key={card._id} diner={card} />;
+                      })}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

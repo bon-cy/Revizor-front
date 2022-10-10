@@ -24,14 +24,7 @@ const ChatPage = () => {
   return (
     <div className={styles.chat_page_body}>
       {token ? (
-        <div className={styles.chat_wrapper}>
-          <div className={styles.chat_ava}>
-            <img
-              src={`http://localhost:4000/public/avatar/${avatar}`}
-              alt=""
-            />
-            <h2>{username}</h2>
-          </div>
+
           <div className={styles.joinChatContainer}>
             <Chat
               socket={socket}
@@ -40,7 +33,7 @@ const ChatPage = () => {
               avatar={avatar}
             />
           </div>
-        </div>
+
       ) : (
         <div className={styles.no_auth_warning}>
           Чтобы зайти в чат, вы должны быть авторизованы!

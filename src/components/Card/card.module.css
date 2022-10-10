@@ -15,7 +15,7 @@
 }
 
 .main h3 {
-    color: black;
+    color: rgb(0, 0, 0);
 
 }
 
@@ -43,9 +43,10 @@
     filter: grayscale(0);
     
 }
-.mian h3{
+.main h3{
     padding: 3px;
     text-align: center;
+    margin-bottom: 0;
 }
 .main hr{    
     width: 90%;

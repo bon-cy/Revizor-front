@@ -13,7 +13,8 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.subGeneral}>
         <div className={styles.block1}>
-          <img width="50px" src={trip} alt="" />
+        <img width="70px" src={"http://localhost:4000/public/logo.png"} alt="" />
+
           <p>Работаем для Вас с 1991 года!</p>
         </div>
         <div className={styles.block2}>

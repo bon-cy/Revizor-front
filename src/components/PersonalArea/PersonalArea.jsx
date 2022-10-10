@@ -9,6 +9,7 @@ import styles from "./personalArea.module.css";
 
 const PersonalArea = () => {
   const [drag, setDrag] = useState(false);
+  const [active, setActive] = useState("info");
 
   const users = useSelector((state) => state.users.users);
   const dispatch = useDispatch();
@@ -32,58 +33,91 @@ const PersonalArea = () => {
     setDrag(false);
   }
 
+  const handleInfo = () => {
+    setActive("info");
+  };
+
+  const handleFav = () => {
+    setActive("fav");
+  };
+
+  const handleReviews = () => {
+    setActive('reviews')
+  }
+
+  const handleExit = () => {
+    setActive('exit')
+  }
+
   return (
     <div>
       {users.map((user, index) => {
         if (user._id === id) {
           return (
+            <div>
+              <div key={user._id} className={styles.main}>
+                <div key={index} className={styles.profile_container}>
+                  <div className={styles.avatar_container}>
+                    {user.avatar?.length ? (
+                      <div className={styles.avatar_img}>
+                        <img
+                          src={`http://localhost:4000/public/avatar/${user.avatar}`}
+                          alt=""
+                        />
+                      </div>
+                    ) : (
+                      <>
+                        {drag ? (
+                          <div
+                            className={`${styles.avatar} ${styles.avatar_drag}`}
+                            onDragStart={(e) => dragStartHandler(e)}
+                            onDragLeave={(e) => drahLeaveHandler(e)}
+                            onDragOver={(e) => dragStartHandler(e)}
+                            onDrop={(e) => onDropHandler(e)}
+                          >
+                            <FontAwesomeIcon icon={faUserPlus} />
+                          </div>
+                        ) : (
+                          <div
+                            className={styles.avatar}
+                            onDragStart={(e) => dragStartHandler(e)}
+                            onDragLeave={(e) => drahLeaveHandler(e)}
+                            onDragOver={(e) => dragStartHandler(e)}
+                          >
+                            <FontAwesomeIcon icon={faUser} />
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
 
-            <div className={styles.main}>
-              <div key={index} className={styles.profile_container}>
-                <div className={styles.avatar_container}>
-                  {user.avatar?.length ? (
-                    <div className={styles.avatar_img}>
-                      <img
-                        src={`http://localhost:4000/public/avatar/${user.avatar}`}
-                        alt=""
-                      />
+                  <div className={styles.user_informatins}>
+                    <span className={styles.login}>{user.login}</span>
+                  </div>
+                </div>
+                <div className={styles.card_and_navbar}>
+                  <div className={styles.personal_navbar}>
+                    <div onClick={handleInfo} className={active === 'info' && styles.isActive} >Личные данные</div>
+                    <div onClick={handleFav} className={active === 'fav' && styles.isActive}>
+                      Мои избранные
                     </div>
-                  ) : (
-                    <>
-                      {drag ? (
-                        <div
-                          className={`${styles.avatar} ${styles.avatar_drag}`}
-                          onDragStart={(e) => dragStartHandler(e)}
-                          onDragLeave={(e) => drahLeaveHandler(e)}
-                          onDragOver={(e) => dragStartHandler(e)}
-                          onDrop={(e) => onDropHandler(e)}
-                        >
-                          <FontAwesomeIcon icon={faUserPlus} />
-                        </div>
-                      ) : (
-                        <div
-                          className={styles.avatar}
-                          onDragStart={(e) => dragStartHandler(e)}
-                          onDragLeave={(e) => drahLeaveHandler(e)}
-                          onDragOver={(e) => dragStartHandler(e)}
-                        >
-                          <FontAwesomeIcon icon={faUser} />
-                        </div>
-                      )}
-                    </>
+                    <div onClick={handleReviews} className={active === 'reviews' && styles.isActive} >Мои отзывы</div>
+                    <div onClick={handleExit}  className={active === 'exit' && styles.isActive} >Выйти</div>
+                  </div>
+                  {active === "info" && (
+                    <div className={styles.pers_info}>
+                      <div>Логин: {user.login}</div>
+                      <div>Email: {user.mail}</div>
+                    </div>
+                  )}
+                  {active === "fav" && (
+                    <div className={styles.card}>
+                      {user.like.map((card) => {
+                        return <Card key={card._id} diner={card} />;
+                      })}
+                    </div>
                   )}
                 </div>
-
-
-                <div className={styles.user_informatins}>
-                  <span className={styles.login}>{user.login}</span>
-                  <span className={styles.mail}>{user.mail}</span>
-                </div>
-              </div>
-              <div className={styles.card}>
-                {user.like.map(card => {
-                  return <Card diner={card} />
-                })}
               </div>
             </div>
           );

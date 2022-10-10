@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="container">
       <Header />
+      <div style={{minHeight: '80vh'}} >
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/review" element={<Review />} />
@@ -19,6 +20,8 @@ function App() {
         <Route path="/diner/:dinerId" element={<Diner />} />
         <Route path="/chat" element={<ChatPage />} />
       </Routes>
+      </div>
+     
       <Footer />
     </div>
   );

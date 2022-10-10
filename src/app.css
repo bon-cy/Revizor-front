@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Ubuntu, Arial, Helvetica, sans-serif;
-  
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
 }
 /* .container {
   width: 100%;
@@ -13,5 +13,4 @@
 
 .container {
   width: 100%;
-  
 }

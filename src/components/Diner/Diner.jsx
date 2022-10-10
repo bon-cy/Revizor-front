@@ -9,13 +9,14 @@ import Review from "../Review/Review";
 import styles from "./diner.module.css";
 
 const Diner = () => {
-  const diners = useSelector((state) => state.diners.diners);
   const { dinerId } = useParams();
   const dispatch = useDispatch();
   
   useEffect(() => {
     dispatch(fetchDiners());
   }, [dispatch]);
+
+  const diners = useSelector((state) => state.diners.diners);
 
  
 

@@ -76,8 +76,8 @@ const Map = () => {
               src="https://avatars.mds.yandex.net/get-altay/4352895/2a0000017c18b203c5855faf43d0ddc4ce33/XXL"
             ></img>
             <div className={styles.winContent2}>
-              <div className={styles.name2}>DodoPizza</div>
-              <div className={styles.position2}>ул.Назарбфева 84а</div>
+              <div className={styles.name2}>soren</div>
+              <div className={styles.position2}>ул.Путина 10</div>
             </div>
           </div>
 
@@ -98,8 +98,8 @@ const Map = () => {
               src="https://avatars.mds.yandex.net/get-altay/4464784/2a0000017b52c14b137d6cb8915775f82517/XXL"
             ></img>
             <div className={styles.winContent3}>
-              <div className={styles.name3}>DodoPizza</div>
-              <div className={styles.position3}>ул.Путина 10</div>
+              <div className={styles.name3}>Ramazoty</div>
+              <div className={styles.position3}>ул.Назарбфева 84а</div>
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ import DinerHead from "../DinerHead/DinerHead";
 import Review from "../Review/Review";
 import styles from "./diner.module.css";
 
+
 const Diner = () => {
   const { dinerId } = useParams();
   const dispatch = useDispatch();
@@ -31,10 +32,12 @@ const Diner = () => {
       <div className={styles.diner_head}>
         <DinerHead diner={diner} />
       </div>
+      
       <div className={styles.diner_main}>
         <DinerGallery diner={diner} />
      
       </div>
+      
 
       <div className={styles.diner_review}>
         3

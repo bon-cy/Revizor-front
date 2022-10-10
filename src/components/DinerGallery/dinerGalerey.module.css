@@ -13,6 +13,7 @@
   align-items: center;
   width: 100%;
   background-color: white;
+  
 }
 .slyderLine {
   display: flex;
@@ -21,15 +22,19 @@
   height: 600px;
   transition: 0.7s;
 }
-.imgCont {
-  display: flex;
-  width: 480px;
-  overflow: hidden;
-  height: 450px;
-  align-items: center;
-  justify-content: center;
+
+.menyText {
+height: 5vh;
+display: flex;
+justify-content: center;
+font-size: 4vh;
+margin-bottom: 1vh;
+font-family: system-ui;
 }
+
+
 .img {
+
   width: 120%;
   min-height: 450px;
 }
@@ -98,17 +103,32 @@
 
 .infoCont {
   display: flex;
+  flex-direction: column;
+
 }
 .rating {
   margin: 10px;
+  font-family: system-ui;
 }
 .middlePrice {
+  font-family: system-ui;
   margin: 10px;
 }
 .address {
+  font-family: system-ui;
   margin: 10px;
 }
 
+.imgCont {
+  display: flex;
+  width: 480px;
+  overflow: hidden;
+  height: 450px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
 
 
 .menyCont {
@@ -116,7 +136,15 @@
   display: flex;
   flex-wrap: nowrap;
   background-color:white;
-  margin-bottom: 100px;
+  margin-bottom: 5vh;
+  
+}
+.infoContText {
+  display: flex;
+  font-family: system-ui;
+  
+  
+
 }
 
 .menuImgCont {

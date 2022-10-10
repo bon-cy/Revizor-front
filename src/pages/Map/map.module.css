@@ -3,7 +3,8 @@
   background-color: transparent;
   display: flex;
   justify-content: space-around;
-  margin: 5% 0;
+  margin-top: 0px;
+  margin-bottom: 5vh;
 }
 
 
@@ -75,7 +76,7 @@
 .winContent {
   width: 90%;
   height: 35%;
-  font-size: 9px;
+  font-size: 1.2vh;
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
@@ -140,7 +141,7 @@
 .winContent2 {
   width: 90%;
   height: 35%;
-  font-size: 9px;
+  font-size: 1.2vh;
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
@@ -205,7 +206,7 @@
 .winContent3 {
   width: 90%;
   height: 35%;
-  font-size: 9px;
+  font-size: 1.2vh;
   display: flex;
   flex-direction: column;
   font-family: sans-serif;

@@ -82,8 +82,13 @@
     box-shadow: 0 0 10px 5px white;
     background-color: black;
 }
-.raiting{
+.rating{
     font-size: 25px;
+    color:#f2b203
+}
+.ratingDis{
+    font-size: 25px;
+    color:black
 }
 
 .address {

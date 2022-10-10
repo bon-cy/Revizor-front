@@ -12,6 +12,7 @@ const Card = ({ diner }) => {
   const users = useSelector((state) => state.users.users);
   const dispatch = useDispatch();
   const dinerId = diner._id;
+  const star = ["★","★","★","★","★"]
 
   const like = users
     .filter((user) => {
@@ -57,7 +58,11 @@ const Card = ({ diner }) => {
       </div>
       <h3>{diner.name}</h3>
       {/* <hr /> */}
-      <span className={styles.raiting}>{diner.raiting}★★★★★</span>
+      <span>{star.map((item, index)=>{
+        return(
+          <><span className={(diner.rating > index) ? styles.rating: styles.ratingDis}>{item}</span></>
+        )
+      })}</span>
       <p className={styles.address}>{diner.address}</p>
       <button>
         <Link

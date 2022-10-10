@@ -6,6 +6,7 @@ import MainPage from "./pages/Mainpage/MainPage";
 import Diner from "./components/Diner/Diner";
 import PersonalArea from "./components/PersonalArea/PersonalArea";
 import ChatPage from "./pages/Chat/ChatPage";
+import Review from "./components/Review/Review";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/review" element={<Review />} />
         <Route path="/personal/:id" element={<PersonalArea />} />
         <Route path="/diner/:dinerId" element={<Diner />} />
         <Route path="/chat" element={<ChatPage />} />

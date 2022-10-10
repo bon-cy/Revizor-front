@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 
 const DinerHead = ({ diner }) => {
   const { dinerId } = useParams();
+  console.log(diner)
   const userId = useSelector((state) => state.application.id);
   const users = useSelector((state) => state.users.users);
 

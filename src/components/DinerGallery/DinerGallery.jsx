@@ -1,5 +1,5 @@
 import React from "react";
-
+import Map from "../../pages/Map/Map";
 import styles from "./dinerGalerey.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -9,7 +9,6 @@ const DinerGallery = ({ diner }) => {
   const filteredDiner = diner?.menu.filter((el) => {
     return el !== "ramozotiMenu1.jpg" && el !== "ramozotiMenu3.jpg";
   });
-  
 
   const [offset, setOffset] = useState(0);
 
@@ -52,6 +51,7 @@ const DinerGallery = ({ diner }) => {
           })}
         </div>
       </div>
+      <Map />
       <div className={styles.arrow}>
         <button className={styles.left} onClick={handleLeft}>
           <FontAwesomeIcon className={styles.leftIcon} icon={faArrowLeft} />
@@ -61,10 +61,16 @@ const DinerGallery = ({ diner }) => {
           <FontAwesomeIcon className={styles.rightIcon} icon={faArrowRight} />
         </button>
       </div>
+
       <div className={styles.infoCont}>
-        <div className={styles.rating}>Рейтинг : {diner?.rating}</div>
-        <div className={styles.middlePrice}>Средний чек : {diner?.middlePrice}</div>
-        <div className={styles.address}>Адрес : {diner?.address}</div>
+        <div className={styles.menyText}>Меню</div>
+        <div className={styles.infoContText}>
+          <div className={styles.rating}>Рейтинг : {diner?.rating}</div>
+          <div className={styles.middlePrice}>
+            Средний чек : {diner?.middlePrice}
+          </div>
+          <div className={styles.address}>Адрес : {diner?.address}</div>
+        </div>
       </div>
 
       <div className={styles.menyCont}>

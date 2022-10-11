@@ -9,6 +9,7 @@ const Auth = ({ setModal }) => {
 
   return (
     <div className={styles.auth_wrapper}>
+      
 
       {toReg ? (
         <SignUp setModal={setModal} setToReg={setToReg} />

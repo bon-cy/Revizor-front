@@ -7,10 +7,12 @@ import { useEffect } from "react";
 import { rateDiner } from "../../features/dinerSlice";
 import { addReview, fetchReviews } from "../../features/commentSlice";
 import styles from "./review.module.css";
+import { ColorRing } from "react-loader-spinner";
 
 const Review = () => {
   const dispatch = useDispatch();
   const { dinerId } = useParams();
+  const load = useSelector((state) => state.comments.load);
 
   useEffect(() => {
     dispatch(fetchReviews());
@@ -65,6 +67,19 @@ const Review = () => {
 
   return (
     <div className={styles.glav}>
+      {load && (
+        <div className={styles.load}>
+          <ColorRing
+            visible={true}
+            height="100"
+            width="100"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="blocks-wrapper"
+            colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+          />
+        </div>
+      )}
       {visible ? (
         <div className={styles.main}>
           <div className="ratingDiv">

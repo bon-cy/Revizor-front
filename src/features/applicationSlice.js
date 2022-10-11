@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   error: null,
+  load: false,
   signingUp: false,
   signingIn: false,
   token: localStorage.getItem("token"),
@@ -70,26 +71,32 @@ const appliactionSlice = createSlice({
       .addCase(authSignUp.pending, (state) => {
         state.signingUp = true;
         state.error = null;
+        state.load = true;
       })
       .addCase(authSignUp.rejected, (state, action) => {
         state.signingUp = false;
+        state.load = false
         state.error = action.payload;
       })
       .addCase(authSignUp.fulfilled, (state, action) => {
         state.signingUp = false;
+        state.load = false
         state.error = null;
       })
       .addCase(authSignIn.pending, (state, action) => {
         state.signingIn = true;
         state.error = null;
+        state.load = true;
       })
       .addCase(authSignIn.rejected, (state, action) => {
         state.signingIn = false;
+        state.load = false
         state.error = action.payload;
       })
       .addCase(authSignIn.fulfilled, (state, action) => {
         state.signingIn = false;
         state.error = null;
+        state.load = false
         state.token = action.payload.token;
       });
   },

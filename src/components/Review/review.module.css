@@ -185,24 +185,31 @@
 .plusMinusText {
   font-size: large;
 }
-.textCom{
+.textCom {
   width: 100%;
   box-sizing: border-box;
   padding: 2%;
   color: #212529;
   flex-wrap: wrap;
 }
-.btnDiv{
+.btnDiv {
   margin: 0 auto;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   padding: 1%;
 }
-.hide{
+.hide {
   display: none;
 }
-.reverse{
+.reverse {
   display: flex;
   flex-direction: column-reverse;
+}
+
+.load {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

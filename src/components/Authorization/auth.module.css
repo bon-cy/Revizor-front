@@ -150,3 +150,10 @@
   width: 240px;
   transition: 0.5s;
 }
+
+.load{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

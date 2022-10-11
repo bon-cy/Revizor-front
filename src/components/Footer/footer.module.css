@@ -18,8 +18,22 @@
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
+
 }
 .dno {
+  margin-top: 3vh;
   display: flex;
   justify-content: center;
+
+}
+.icon {
+  margin-left: 4vh;
+  margin-right: 4vh;
+  margin-top: 3vh;
+  
+}
+.content {
+  margin-top: 5vh;
+
+  font-family: system-ui;
 }

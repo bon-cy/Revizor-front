@@ -200,7 +200,7 @@ const Map = () => {
             ></img>
             <div className={styles.winContent6}>
               <div className={styles.name6}>Soren</div>
-              <div className={styles.position6}>ул.Путина 10</div>
+              <div className={styles.position6}>ул.Путина д10</div>
             </div>
           </div>
 

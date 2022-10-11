@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { authSignIn } from "../../features/applicationSlice";
 import styles from "../Authorization/auth.module.css";
+import { ColorRing } from "react-loader-spinner";
 
 const SignIn = ({ setModal, setToReg }) => {
   const dispatch = useDispatch();
+  const load = useSelector((state) => state.application.load);
 
   const navigate = useNavigate();
   function sendNavigate() {
@@ -51,14 +53,27 @@ const SignIn = ({ setModal, setToReg }) => {
     setMail("");
 
     e.preventDefault();
-    dispatch(authSignIn({ login, password,mail }));
+    dispatch(authSignIn({ login, password, mail }));
     setTimeout(() => {
-      window.location.reload()
-    }, 1000)
+      window.location.reload();
+    }, 1000);
   };
 
   return (
     <div className={styles.auth_modal}>
+      {load && (
+        <div className={styles.load}>
+          <ColorRing
+            visible={true}
+            height="100"
+            width="100"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="blocks-wrapper"
+            colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+          />
+        </div>
+      )}
       <button className={styles.close_btn} onClick={handleCloseAuth}>
         ✖
       </button>

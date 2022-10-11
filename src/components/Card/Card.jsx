@@ -60,7 +60,7 @@ const Card = ({ diner }) => {
       {/* <hr /> */}
       <span>{star.map((item, index)=>{
         return(
-          <><span className={(diner.rating > index) ? styles.rating: styles.ratingDis}>{item}</span></>
+          <span key={index} className={(diner.rating > index) ? styles.rating: styles.ratingDis}>{item}</span>
         )
       })}</span>
       <p className={styles.address}>{diner.address}</p>

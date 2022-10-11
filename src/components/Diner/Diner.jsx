@@ -37,7 +37,6 @@ const Diner = () => {
       </div>
 
       <div className={styles.diner_review}>
-        3
         <Review />
 
         

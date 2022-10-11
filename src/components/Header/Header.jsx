@@ -56,7 +56,7 @@ const Header = () => {
           {id ? (
             <div>
               <Link to={`/personal/${id}`} className={styles.profil}>
-                <FontAwesomeIcon color="orangered" icon={faUserSecret} />
+                <FontAwesomeIcon color="black" icon={faUserSecret} />
               </Link>
             </div>
           ) : (

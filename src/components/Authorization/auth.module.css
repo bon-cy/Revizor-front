@@ -26,6 +26,8 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 24px;
   margin-bottom: 30px;
+  color: #fff;
+  text-align: start;
 }
 
 .close_btn {
@@ -149,4 +151,11 @@
 .back_btn:hover {
   width: 240px;
   transition: 0.5s;
+}
+
+.load{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

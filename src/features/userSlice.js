@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = {
   users: [],
+  load: false,
 };
 
 export const fetchUsers = createAsyncThunk("get/users", async (_, thunkAPI) => {
@@ -75,8 +76,10 @@ const userSlice = createSlice({
     builder
       .addCase(fetchUsers.fulfilled, (state, action) => {
         state.users = action.payload;
+        state.load = false;
       })
       .addCase(addAvatar.fulfilled, (state, action) => {
+        state.load = false;
         state.users = state.users.map((user) => {
           if (user._id === action.payload.id) {
             user.avatar = action.payload.file.name;
@@ -85,6 +88,7 @@ const userSlice = createSlice({
         });
       })
       .addCase(addLike.fulfilled, (state, action) => {
+        state.load = false;
         state.users = state.users.map((user) => {
           if (user._id === action.payload.userId) {
             user.like.push(action.payload.diner);
@@ -93,9 +97,12 @@ const userSlice = createSlice({
         });
       })
       .addCase(addDislike.fulfilled, (state, action) => {
+        state.load = false;
         state.users = state.users.map((user) => {
           if (user._id === action.payload.user._id) {
-            user.like = user.like.filter((liks) => liks._id !== action.payload.dinerId);
+            user.like = user.like.filter(
+              (liks) => liks._id !== action.payload.dinerId
+            );
           }
           return user;
         });

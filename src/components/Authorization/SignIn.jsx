@@ -53,17 +53,17 @@ const SignIn = ({ setModal, setToReg }) => {
     setMail("");
 
     e.preventDefault();
-    dispatch(authSignIn({ login, password,mail }));
+    dispatch(authSignIn({ login, password, mail }));
     setTimeout(() => {
-      window.location.reload()
-    }, 1000)
+      window.location.reload();
+    }, 1000);
   };
 
   return (
     <div className={styles.auth_modal}>
       {load && (
-                    <div className={styles.load}>
-                        <ColorRing
+        <div className={styles.load}>
+          <ColorRing
             visible={true}
             height="100"
             width="100"
@@ -72,9 +72,8 @@ const SignIn = ({ setModal, setToReg }) => {
             wrapperClass="blocks-wrapper"
             colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
           />
-                    </div>
-        
-        )}
+        </div>
+      )}
       <button className={styles.close_btn} onClick={handleCloseAuth}>
         ✖
       </button>

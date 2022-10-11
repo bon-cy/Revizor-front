@@ -8,6 +8,7 @@ import styles from "./cards.module.css";
 const Cards = () => {
   const diners = useSelector((state) => state.diners.filterDiners);
   const [price, setPrice] = useState("");
+  console.log(diners)
 
   const dispatch = useDispatch();
   useEffect(() => {

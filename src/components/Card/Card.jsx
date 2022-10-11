@@ -77,3 +77,4 @@ const Card = ({ diner }) => {
 };
 
 export default Card;
+

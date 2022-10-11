@@ -9,7 +9,7 @@ const DinerGallery = ({ diner }) => {
   const filteredDiner = diner?.menu.filter((el) => {
     return el !== "ramozotiMenu1.jpg" && el !== "ramozotiMenu3.jpg";
   });
-
+  
   const [offset, setOffset] = useState(0);
 
   const handleRight = () => {
@@ -51,7 +51,7 @@ const DinerGallery = ({ diner }) => {
           })}
         </div>
       </div>
-      <Map />
+      <Map diner={diner}/>
       <div className={styles.arrow}>
         <button className={styles.left} onClick={handleLeft}>
           <FontAwesomeIcon className={styles.leftIcon} icon={faArrowLeft} />

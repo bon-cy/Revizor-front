@@ -2,6 +2,7 @@ const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 const initialState = {
   reviews: [],
+  load: false,
 };
 
 export const fetchReviews = createAsyncThunk(
@@ -39,14 +40,16 @@ export const addReview = createAsyncThunk(
 const reviewSlice = createSlice({
   name: "review",
   initialState,
-  reducers:{},
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchReviews.fulfilled, (state, action) => {
         state.reviews = action.payload;
+        state.load = false;
       })
       .addCase(addReview.fulfilled, (state, action) => {
         state.reviews.push(action.payload);
+        state.load = false;
       });
   },
 });

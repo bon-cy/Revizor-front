@@ -3,6 +3,7 @@ const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 const initialState = {
   diners: [],
   filterDiners: [],
+  load: false,
 };
 
 export const fetchDiners = createAsyncThunk(
@@ -52,10 +53,15 @@ const dinerSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchDiners.fulfilled, (state, action) => {
+        state.load = false;
         state.diners = action.payload;
         state.filterDiners = action.payload;
       })
+      .addCase(fetchDiners.pending, (state, action) => {
+        state.load = true;
+      })
       .addCase(rateDiner.fulfilled, (state, action) => {
+        state.load = false;
         state.diners = state.diners.map((item) => {
           if (item._id === action.payload._id) {
             item.rating = action.payload.rating;
